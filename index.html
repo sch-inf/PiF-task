@@ -50,8 +50,12 @@
       min-height:120px;
       transition: transform .12s ease, box-shadow .12s ease;
     }
+    
     .card:hover{ transform: translateY(-6px); box-shadow:0 8px 18px rgba(0,0,0,0.08); }
-
+    .card[disabled] {
+        pointer-events: none;
+        filter: grayscale(1);
+    }
     .card-head{
       display:flex;
       align-items:center;
@@ -141,7 +145,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" disabled>
           <div>
             <div class="card-head">
               <div class="num">2</div>
@@ -158,7 +162,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" disabled>
           <div>
             <div class="card-head">
               <div class="num">3</div>
@@ -175,7 +179,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" disabled>
           <div>
             <div class="card-head">
               <div class="num">4</div>
@@ -192,7 +196,7 @@
           </div>
         </div>
 
-        <div class="card">
+        <div class="card" disabled>
           <div>
             <div class="card-head">
               <div class="num">5</div>
@@ -210,25 +214,25 @@
         </div>
 
         <!-- 6..15 -->
-        <div class="card"><div><div class="card-head"><div class="num">6</div><div><div class="title">Аркуш 6 — Витрати та податки</div><div class="subtitle">Заповни таблицю</div></div></div><div class="subtitle" style="margin-top:12px;">Податки, заробітна плата.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet6.html">Відкрити</a></div></div>
+        <div class="card" disabled><div><div class="card-head"><div class="num">6</div><div><div class="title">Аркуш 6 — Витрати та податки</div><div class="subtitle">Заповни таблицю</div></div></div><div class="subtitle" style="margin-top:12px;">Податки, заробітна плата.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet6.html">Відкрити</a></div></div>
 
-        <div class="card"><div><div class="card-head"><div class="num">7</div><div><div class="title">Аркуш 7 — Маркетинг базово</div><div class="subtitle">Групування прикладів</div></div></div><div class="subtitle" style="margin-top:12px;">Реклама, просування.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet7.html">Відкрити</a></div></div>
+        <div class="card" disabled><div><div class="card-head"><div class="num">7</div><div><div class="title">Аркуш 7 — Маркетинг базово</div><div class="subtitle">Групування прикладів</div></div></div><div class="subtitle" style="margin-top:12px;">Реклама, просування.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet7.html">Відкрити</a></div></div>
 
-        <div class="card"><div><div class="card-head"><div class="num">8</div><div><div class="title">Аркуш 8 — Бізнес-план (спрощено)</div><div class="subtitle">Кроки створення</div></div></div><div class="subtitle" style="margin-top:12px;">Послідовність дій.</div></div><div class="card-footer"><span class="meta">≈ 1–2 стор.</span><a class="link-btn" href="sheet8.html">Відкрити</a></div></div>
+        <div class="card" disabled><div><div class="card-head"><div class="num">8</div><div><div class="title">Аркуш 8 — Бізнес-план (спрощено)</div><div class="subtitle">Кроки створення</div></div></div><div class="subtitle" style="margin-top:12px;">Послідовність дій.</div></div><div class="card-footer"><span class="meta">≈ 1–2 стор.</span><a class="link-btn" href="sheet8.html">Відкрити</a></div></div>
 
-        <div class="card"><div><div class="card-head"><div class="num">9</div><div><div class="title">Аркуш 9 — Продажі та клієнти</div><div class="subtitle">Тести і кейси</div></div></div><div class="subtitle" style="margin-top:12px;">Як знайти і утримати клієнта.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet9.html">Відкрити</a></div></div>
+        <div class="card" disabled><div><div class="card-head"><div class="num">9</div><div><div class="title">Аркуш 9 — Продажі та клієнти</div><div class="subtitle">Тести і кейси</div></div></div><div class="subtitle" style="margin-top:12px;">Як знайти і утримати клієнта.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet9.html">Відкрити</a></div></div>
 
-        <div class="card"><div><div class="card-head"><div class="num">10</div><div><div class="title">Аркуш 10 — Ціноутворення</div><div class="subtitle">Практичні підрахунки</div></div></div><div class="subtitle" style="margin-top:12px;">Як встановлювати ціну.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet10.html">Відкрити</a></div></div>
+        <div class="card" disabled><div><div class="card-head"><div class="num">10</div><div><div class="title">Аркуш 10 — Ціноутворення</div><div class="subtitle">Практичні підрахунки</div></div></div><div class="subtitle" style="margin-top:12px;">Як встановлювати ціну.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet10.html">Відкрити</a></div></div>
 
-        <div class="card"><div><div class="card-head"><div class="num">11</div><div><div class="title">Аркуш 11 — Ризик-менеджмент</div><div class="subtitle">Короткі завдання</div></div></div><div class="subtitle" style="margin-top:12px;">Як зменшити ризики.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet11.html">Відкрити</a></div></div>
+        <div class="card" disabled><div><div class="card-head"><div class="num">11</div><div><div class="title">Аркуш 11 — Ризик-менеджмент</div><div class="subtitle">Короткі завдання</div></div></div><div class="subtitle" style="margin-top:12px;">Як зменшити ризики.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet11.html">Відкрити</a></div></div>
 
-        <div class="card"><div><div class="card-head"><div class="num">12</div><div><div class="title">Аркуш 12 — Фінансові цілі</div><div class="subtitle">Планування</div></div></div><div class="subtitle" style="margin-top:12px;">Короткострокові/довгострокові цілі.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet12.html">Відкрити</a></div></div>
+        <div class="card" disabled><div><div class="card-head"><div class="num">12</div><div><div class="title">Аркуш 12 — Фінансові цілі</div><div class="subtitle">Планування</div></div></div><div class="subtitle" style="margin-top:12px;">Короткострокові/довгострокові цілі.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet12.html">Відкрити</a></div></div>
 
-        <div class="card"><div><div class="card-head"><div class="num">13</div><div><div class="title">Аркуш 13 — Інвестиції (введення)</div><div class="subtitle">Прості поняття</div></div></div><div class="subtitle" style="margin-top:12px;">Що таке інвестиції.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet13.html">Відкрити</a></div></div>
+        <div class="card" disabled><div><div class="card-head"><div class="num">13</div><div><div class="title">Аркуш 13 — Інвестиції (введення)</div><div class="subtitle">Прості поняття</div></div></div><div class="subtitle" style="margin-top:12px;">Що таке інвестиції.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet13.html">Відкрити</a></div></div>
 
-        <div class="card"><div><div class="card-head"><div class="num">14</div><div><div class="title">Аркуш 14 — Етика бізнесу</div><div class="subtitle">Обговорення</div></div></div><div class="subtitle" style="margin-top:12px;">Порядність у роботі.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet14.html">Відкрити</a></div></div>
+        <div class="card" disabled><div><div class="card-head"><div class="num">14</div><div><div class="title">Аркуш 14 — Етика бізнесу</div><div class="subtitle">Обговорення</div></div></div><div class="subtitle" style="margin-top:12px;">Порядність у роботі.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet14.html">Відкрити</a></div></div>
 
-        <div class="card"><div><div class="card-head"><div class="num">15</div><div><div class="title">Аркуш 15 — Підсумкове завдання</div><div class="subtitle">Повторення всього</div></div></div><div class="subtitle" style="margin-top:12px;">Короткий тест для підсумку курсу.</div></div><div class="card-footer"><span class="meta">≈ 1–2 стор.</span><a class="link-btn" href="sheet15.html">Відкрити</a></div></div>
+        <div class="card" disabled><div><div class="card-head"><div class="num">15</div><div><div class="title">Аркуш 15 — Підсумкове завдання</div><div class="subtitle">Повторення всього</div></div></div><div class="subtitle" style="margin-top:12px;">Короткий тест для підсумку курсу.</div></div><div class="card-footer"><span class="meta">≈ 1–2 стор.</span><a class="link-btn" href="sheet15.html">Відкрити</a></div></div>
 
       </div>
     </main>
