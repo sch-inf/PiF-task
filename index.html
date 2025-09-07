@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <title>Робочий зошит — Підприємництво та фінансова грамотність</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    /* Стилі відповідають оформленню з шаблону (адаптовано під головну) */
+    :root{
+      --bg: #e8f5f4;
+      --accent: #52ab98;
+      --muted: #2b6777;
+      --card: #fff;
+      --card-soft: #f5fdfc;
+    }
+    html,body{height:100%; margin:0;}
+    body{
+      font-family: "Inter", Arial, sans-serif;
+      background-color: var(--bg);
+      color:#222;
+      line-height:1.5;
+      padding:28px;
+      box-sizing:border-box;
+    }
+
+    header{ text-align:center; margin-bottom:26px; }
+    header h1{ margin:0; font-size:34px; color:var(--muted); }
+    header p{ margin:6px 0 0; color:var(--accent); font-size:18px; }
+
+    .container{
+      max-width:1250px;
+      margin: 0 auto;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap:18px;
+      margin-top:22px;
+    }
+
+    .card{
+      background: var(--card);
+      border-radius:12px;
+      padding:16px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.06);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      min-height:120px;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .card:hover{ transform: translateY(-6px); box-shadow:0 8px 18px rgba(0,0,0,0.08); }
+
+    .card-head{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .num{
+      width:44px;
+      height:44px;
+      border-radius:10px;
+      background: linear-gradient(180deg, var(--accent), #2f8f7a);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      font-size:18px;
+      box-shadow: 0 2px 6px rgba(82,171,152,0.18);
+    }
+    .title{
+      font-weight:700;
+      color:var(--muted);
+      font-size:16px;
+      margin:0;
+    }
+    .subtitle{
+      font-size:13px;
+      color:#566;
+      margin-top:6px;
+    }
+
+    .card-footer{
+      margin-top:12px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+    }
+
+    .link-btn{
+      text-decoration:none;
+      background:var(--accent);
+      color:#fff;
+      padding:8px 12px;
+      border-radius:8px;
+      font-weight:600;
+      box-shadow:0 2px 6px rgba(82,171,152,0.12);
+    }
+
+    .meta{
+      font-size:13px;
+      color:#5a6b67;
+    }
+
+    /* Footer */
+    footer{ margin-top:28px; text-align:center; color:#4b6; font-size:14px; }
+
+    @media (max-width:520px){
+      .num{ width:40px; height:40px; font-size:16px; }
+      .card{ padding:12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Робочий зошит</h1>
+      <p>Підприємництво та фінансова грамотність — набір аркушів</p>
+    </header>
+
+    <main>
+      <div class="grid">
+        <!-- Карточки: змінюй title/description/посилання на свій розсуд -->
+        <div class="card">
+          <div>
+            <div class="card-head">
+              <div class="num">1</div>
+              <div>
+                <div class="title">Аркуш 1 — Поняття підприємництва</div>
+                <div class="subtitle">Тести, короткі відповіді</div>
+              </div>
+            </div>
+            <div class="subtitle" style="margin-top:12px;">Основні терміни та роль підприємця.</div>
+          </div>
+          <div class="card-footer">
+            <span class="meta">≈ 1 стор.</span>
+            <a class="link-btn" href="sheet1.html">Відкрити</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <div class="card-head">
+              <div class="num">2</div>
+              <div>
+                <div class="title">Аркуш 2 — Як з’являється ідея</div>
+                <div class="subtitle">Практичні завдання</div>
+              </div>
+            </div>
+            <div class="subtitle" style="margin-top:12px;">Генерація ідей, мінімальні витрати.</div>
+          </div>
+          <div class="card-footer">
+            <span class="meta">≈ 1 стор.</span>
+            <a class="link-btn" href="sheet2.html">Відкрити</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <div class="card-head">
+              <div class="num">3</div>
+              <div>
+                <div class="title">Аркуш 3 — Ризик і прибуток</div>
+                <div class="subtitle">Тести, задачі</div>
+              </div>
+            </div>
+            <div class="subtitle" style="margin-top:12px;">Прості числові приклади.</div>
+          </div>
+          <div class="card-footer">
+            <span class="meta">≈ 1 стор.</span>
+            <a class="link-btn" href="sheet3.html">Відкрити</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <div class="card-head">
+              <div class="num">4</div>
+              <div>
+                <div class="title">Аркуш 4 — Фінансова грамотність</div>
+                <div class="subtitle">Пропуски, визначення</div>
+              </div>
+            </div>
+            <div class="subtitle" style="margin-top:12px;">Бюджет, витрати, доходи.</div>
+          </div>
+          <div class="card-footer">
+            <span class="meta">≈ 1 стор.</span>
+            <a class="link-btn" href="sheet4.html">Відкрити</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <div class="card-head">
+              <div class="num">5</div>
+              <div>
+                <div class="title">Аркуш 5 — Соціальна відповідальність</div>
+                <div class="subtitle">Поміркуй, кейс</div>
+              </div>
+            </div>
+            <div class="subtitle" style="margin-top:12px;">Підприємницькі ініціативи для громади.</div>
+          </div>
+          <div class="card-footer">
+            <span class="meta">≈ 1 стор.</span>
+            <a class="link-btn" href="sheet5.html">Відкрити</a>
+          </div>
+        </div>
+
+        <!-- 6..15 -->
+        <div class="card"><div><div class="card-head"><div class="num">6</div><div><div class="title">Аркуш 6 — Витрати та податки</div><div class="subtitle">Заповни таблицю</div></div></div><div class="subtitle" style="margin-top:12px;">Податки, заробітна плата.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet6.html">Відкрити</a></div></div>
+
+        <div class="card"><div><div class="card-head"><div class="num">7</div><div><div class="title">Аркуш 7 — Маркетинг базово</div><div class="subtitle">Групування прикладів</div></div></div><div class="subtitle" style="margin-top:12px;">Реклама, просування.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet7.html">Відкрити</a></div></div>
+
+        <div class="card"><div><div class="card-head"><div class="num">8</div><div><div class="title">Аркуш 8 — Бізнес-план (спрощено)</div><div class="subtitle">Кроки створення</div></div></div><div class="subtitle" style="margin-top:12px;">Послідовність дій.</div></div><div class="card-footer"><span class="meta">≈ 1–2 стор.</span><a class="link-btn" href="sheet8.html">Відкрити</a></div></div>
+
+        <div class="card"><div><div class="card-head"><div class="num">9</div><div><div class="title">Аркуш 9 — Продажі та клієнти</div><div class="subtitle">Тести і кейси</div></div></div><div class="subtitle" style="margin-top:12px;">Як знайти і утримати клієнта.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet9.html">Відкрити</a></div></div>
+
+        <div class="card"><div><div class="card-head"><div class="num">10</div><div><div class="title">Аркуш 10 — Ціноутворення</div><div class="subtitle">Практичні підрахунки</div></div></div><div class="subtitle" style="margin-top:12px;">Як встановлювати ціну.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet10.html">Відкрити</a></div></div>
+
+        <div class="card"><div><div class="card-head"><div class="num">11</div><div><div class="title">Аркуш 11 — Ризик-менеджмент</div><div class="subtitle">Короткі завдання</div></div></div><div class="subtitle" style="margin-top:12px;">Як зменшити ризики.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet11.html">Відкрити</a></div></div>
+
+        <div class="card"><div><div class="card-head"><div class="num">12</div><div><div class="title">Аркуш 12 — Фінансові цілі</div><div class="subtitle">Планування</div></div></div><div class="subtitle" style="margin-top:12px;">Короткострокові/довгострокові цілі.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet12.html">Відкрити</a></div></div>
+
+        <div class="card"><div><div class="card-head"><div class="num">13</div><div><div class="title">Аркуш 13 — Інвестиції (введення)</div><div class="subtitle">Прості поняття</div></div></div><div class="subtitle" style="margin-top:12px;">Що таке інвестиції.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet13.html">Відкрити</a></div></div>
+
+        <div class="card"><div><div class="card-head"><div class="num">14</div><div><div class="title">Аркуш 14 — Етика бізнесу</div><div class="subtitle">Обговорення</div></div></div><div class="subtitle" style="margin-top:12px;">Порядність у роботі.</div></div><div class="card-footer"><span class="meta">≈ 1 стор.</span><a class="link-btn" href="sheet14.html">Відкрити</a></div></div>
+
+        <div class="card"><div><div class="card-head"><div class="num">15</div><div><div class="title">Аркуш 15 — Підсумкове завдання</div><div class="subtitle">Повторення всього</div></div></div><div class="subtitle" style="margin-top:12px;">Короткий тест для підсумку курсу.</div></div><div class="card-footer"><span class="meta">≈ 1–2 стор.</span><a class="link-btn" href="sheet15.html">Відкрити</a></div></div>
+
+      </div>
+    </main>
+
+    <footer style="margin-top:28px; text-align:center; color:#4b6b63;">
+      Робочий зошит — Підприємництво та фінансова грамотність
+    </footer>
+  </div>
+</body>
+</html>
