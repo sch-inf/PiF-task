@@ -3,63 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Робочий зошит – універсальний шаблон</title>
-  <style>
-    body {
-      font-family: "Inter", Arial, sans-serif;
-      background-color: #e8f5f4;
-      margin: 0 auto;
-      padding: 20px;
-      color: #333;
-      line-height: 1.8;
-      font-size: 18px;
-      max-width: 1250px;
-    }
+<link rel="stylesheet" href="css/style.css">
 
-    header { text-align: center; margin-bottom: 30px; }
-    header h1 { font-size: 34px; margin: 0; color: #2b6777; }
-     header a { color: inherit; transition: color 0.3s ease-in-out }  
-    header a:hover { color:indianred;}  
-    header h2 { font-size: 24px; font-weight: normal; color: #52ab98; margin-top: 5px; }
-
-    .task { background: #fff; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 20px; margin-top: 25px; margin-bottom: 25px; page-break-inside: avoid; }
-    .question { background-color: #e8f5f4; border-radius: 10px; padding: 20px; margin-top: 15px; margin-bottom: 15px; position: relative; }
-    .question p { font-weight: 600; margin-inline: 2rem; display: inline; }
-    .question  p +p {
-          display: block !important;
-          margin: 0;
-          margin-inline: 2rem;
-      }
-    .task-number { display: inline-block; background: #52ab98; color: #fff; font-weight: bold; border-radius: 50%; width: 32px; height: 32px; line-height: 32px; text-align: center; margin-right: 10px; font-size: 18px; }
-    .task-desc { display: inline-block; font-weight: 600; color: #2b6777; font-size: 22px; }
-
-    .sub-number { font-weight: bold; margin-right: 6px; color: #2b6777; position: absolute;  left: 10px; }
-
-    .options { margin-top: 10px; padding-left: 25px; }
-    .options li { margin: 10px 0; cursor: pointer; }
-    .options li.selected { background-color: #cdeee9; border-radius: 6px; padding: 4px; }
-
-    .answer { border: 2px dashed #52ab98; background-color: #f0fdfb; border-radius: 6px; padding: 4px; min-height: 30px; outline: none; cursor: text; position: relative; margin-top: 10px; }
-    .answer.long { min-height: 100px; }
-    .answer:empty:before { content: attr(data-placeholder); color: #aaa; position: absolute; left: 6px; top: 4px; pointer-events: none; }
-    .task[data-type="gap"] .answer { display: inline-block; min-width: 120px; font-weight: 400; }
-    .match { display: flex; gap: 40px; margin-top: 10px; }
-    .match-col { flex: 1; padding: 15px; border-radius: 8px; }
-    .match-col { display: flex; flex-direction: column; }
-    .match-col:nth-child(1) { background-color: #e7fdf0; }
-    .match-col:nth-child(2) { background-color: #fdf7e7; }
-
-    .true-false { display: grid; grid-template-columns: auto 60px 60px; margin: 8px 0; cursor: pointer; position: relative; }
-    .true-false span.option { margin-left: 15px; font-size: 22px; color: #2b6777; font-weight: bold; position: relative; top: -4px; cursor: pointer; }
-    .true-false span.option.selected { background: #cdeee9; border-radius: 4px; padding: 2px 6px; }
-
-    #submit-btn { display: block; margin: 40px auto; padding: 15px 30px; font-size: 20px; background-color: #52ab98; color: #fff; border: none; border-radius: 8px; cursor: pointer; }
-
-    #summary { display: none; background: #fff; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); padding: 30px; margin-top: 40px; }
-    #summary h2 { text-align: center; color: #2b6777; }
-    #summary-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-    #summary-columns ul { list-style: none; padding: 0; margin: 0; background: #f5fdfc; border-radius: 10px; padding: 15px; }
-    #summary-columns li { margin-bottom: 8px; }
-  </style>
 </head>
 <body>
   <header>
@@ -214,137 +159,14 @@
 
   
 
-  <button id="submit-btn">Здати</button>
+ <button id="submit-btn">Здати</button>
 
   <div id="summary">
     <h2>Підсумок</h2>
     <div id="summary-columns"></div>
   </div>
 
-  <script>
-function handleTasks() {
-  document.querySelectorAll('.task').forEach(task => {
-    const type = task.dataset.type;
+<script src="js/script.js"></script>
 
-    // для кожного питання в задачі (щоб працювало з 1.1, 1.2 ...)
-    task.querySelectorAll('.question').forEach(question => {
-
-      if (type === 'test') {
-        question.querySelectorAll('.options li').forEach(li => {
-          li.addEventListener('click', () => {
-            // підсвічуємо лише варіанти в цьому питанні
-            li.parentElement.querySelectorAll('li').forEach(el => el.classList.remove('selected'));
-            li.classList.add('selected');
-            // запис відповіді в поле, що належить саме цьому питанню
-            const ansBox = question.querySelector('.answer');
-            if (ansBox) ansBox.textContent = li.getAttribute('data-value');
-          });
-        });
-      }
-
-      if (type === 'multichoice') {
-        question.querySelectorAll('.options li').forEach(li => {
-          li.addEventListener('click', () => {
-            li.classList.toggle('selected');
-            const selected = [...question.querySelectorAll('.options li.selected')].map(x => x.getAttribute('data-value'));
-            const ansBox = question.querySelector('.answer');
-            if (ansBox) ansBox.textContent = selected.join(', ');
-          });
-        });
-      }
-
-      if (type === 'truefalse') {
-        question.querySelectorAll('.option').forEach(opt => {
-          opt.addEventListener('click', () => {
-            // знімаємо виділення в цьому підпитанні і ставимо для натиснутого
-            question.querySelectorAll('.option').forEach(el => el.classList.remove('selected'));
-            opt.classList.add('selected');
-          });
-        });
-      }
-
-    
-    });
-  });
-}
-
-
-    handleTasks();
-
-    document.getElementById('submit-btn').addEventListener('click', () => {
-      document.getElementById('quiz').style.display = 'none';
-      document.getElementById('submit-btn').style.display = 'none';
-      document.getElementById('summary').style.display = 'block';
-
-      const columns = document.getElementById('summary-columns');
-      columns.innerHTML = '';
-
-      const categoryNames = {
-        test: '📝 Тести',
-        multichoice: '✅ Множинний вибір',
-        short: '✍️ Короткі відповіді',
-        long: '✍️ Розгорнуті відповіді',
-        gap: '🔲 Пропуски',
-        match: '🔗 Відповідності',
-        order: '🔢 Послідовності',
-        group: '📂 Групування',
-        table: '📊 Таблиця',
-        case: '💭 Ситуація',
-        assoc: '💭 Асоціації',
-        truefalse: '📄 Так/Ні'
-      };
-
-      const categories = {};
-
-      document.querySelectorAll('.task').forEach(task => {
-    const type = task.dataset.type;
-
-    // проходимо по кожному question в task
-    task.querySelectorAll('.question').forEach(question => {
-      const qNum = question.getAttribute('data-q') || '';
-      let answers = [];
-
-      if (type === 'test' || type === 'multichoice') {
-        const ansBox = question.querySelector('.answer');
-        const ans = ansBox ? ansBox.textContent.trim() : '';
-        if (ans) answers.push((qNum ? qNum + ' ' : '') + ans);
-      } else if (type === 'truefalse') {
-        const selected = question.querySelector('.option.selected');
-        if (selected) answers.push((qNum ? qNum + ' ' : '') + selected.textContent);
-      } else if (type === 'table') {
-        // для таблиці збираємо всі .answer в цій question без номерів
-        question.querySelectorAll('.answer').forEach(cell => {
-          const val = cell.textContent.trim();
-          if (val) answers.push(val);
-        });
-      } else {
-        // short, long, gap, match, order, group, case, assoc
-        question.querySelectorAll('.answer').forEach(ansEl => {
-          const val = ansEl.textContent.trim();
-          if (val) answers.push((qNum ? qNum + ' ' : '') + val);
-        });
-      }
-
-      if (answers.length) {
-        if (!categories[type]) categories[type] = [];
-        categories[type].push(...answers);
-      }
-    });
-  });
-
-  // рендеримо колонки (ті, що існують)
-  for (const [cat, items] of Object.entries(categories)) {
-    if (items.length) {
-      const ul = document.createElement('ul');
-      const header = document.createElement('li');
-      header.style.fontWeight = 'bold';
-      header.textContent = categoryNames[cat] || cat;
-      ul.appendChild(header);
-      items.forEach(it => { const li = document.createElement('li'); li.textContent = it; ul.appendChild(li); });
-      columns.appendChild(ul);
-    }
-      }
-    });
-  </script>
 </body>
 </html>
