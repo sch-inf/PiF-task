@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Робочий зошит – §1 «Практикум підприємливих новачків»</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">Робочий зошит</a></h1>
+    <h2>§1 «Практикум підприємливих новачків»</h2>
+  </header>
+
+<div id="quiz">
+
+  <!-- test -->
+  <div class="task" data-type="test">
+    <div><span class="task-number">1</span><span class="task-desc">📝 Один правильний варіант</span></div>
+    <div class="question" data-q="1.1">
+      <span class="sub-number">1.1</span>
+      <p>Які гроші вперше випускав для розрахунків Володимир Святославич Великий?</p>
+      <ul class="options">
+        <li data-value="А">а) паперові купюри</li>
+        <li data-value="Б">б) срібні та золоті монети (златники, срібляники)</li>
+        <li data-value="В">в) гривня у вигляді ґудзиків</li>
+        <li data-value="Г">г) мушлі каурі</li>
+      </ul>
+      <div class="answer" data-placeholder="Вибери варіант"></div>
+    </div>
+  </div>
+
+  <!-- truefalse -->
+  <div class="task" data-type="truefalse">
+    <div><span class="task-number">2</span><span class="task-desc">✔️ Так/ні</span></div>
+
+    <div class="question true-false" data-q="2.1">
+      <span class="sub-number">2.1</span>
+      Бартер — це форма обміну без використання грошей.
+      <span class="option">✔️</span> <span class="option">❌</span>
+    </div>
+
+    <div class="question true-false" data-q="2.2">
+      <span class="sub-number">2.2</span>
+      Давні монети із золота й срібла мали цінність самі по собі (не тільки як знак).
+      <span class="option">✔️</span> <span class="option">❌</span>
+    </div>
+  </div>
+
+  <!-- order -->
+  <div class="task" data-type="order">
+    <div><span class="task-number">3</span><span class="task-desc">🔢 Встанови послідовність</span></div>
+    <div class="question" data-q="3.1">
+      <span class="sub-number">3.1</span>
+      <p>Розташуйте етапи розвитку грошей у хронологічному порядку (від найдавнішого до найновішого):</p>
+      <ol>
+        <li>Паперові гроші</li>
+        <li>Економіка дарування</li>
+        <li>Монети з дорогоцінних металів</li>
+        <li>Примітивні товаро-гроші (зерно, хутро, сокири)</li>
+      </ol>
+      <div class="answer" contenteditable="true" data-placeholder="Напр. 2-4-3-1"></div>
+    </div>
+  </div>
+
+  <!-- multichoice -->
+  <div class="task" data-type="multichoice">
+    <div><span class="task-number">4</span><span class="task-desc">✅ Кілька правильних варіантів</span></div>
+    <div class="question" data-q="4.1">
+      <span class="sub-number">4.1</span>
+      <p>Які функції виконують гроші у сучасному суспільстві? (позначте усі правильні варіанти)</p>
+      <ul class="options">
+        <li data-value="А">Міра цінності</li>
+        <li data-value="Б">Засіб обігу</li>
+        <li data-value="В">Засіб нагромадження</li>
+        <li data-value="Г">Засіб прикрашання житла</li>
+      </ul>
+      <div class="answer" data-placeholder="Вибери варіанти"></div>
+    </div>
+  </div>
+
+  <!-- table -->
+  <div class="task" data-type="table">
+    <div><span class="task-number">5</span><span class="task-desc">📊 Заповни таблицю</span></div>
+    <div class="question" data-q="5.1">
+      <span class="sub-number">5.1</span>
+      <p>Допишіть приклади з життя, які відповідають кожній функції грошей.</p>
+      <table border="1" style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th>Функція грошей</th>
+          <th>Приклад із життя</th>
+        </tr>
+        <tr>
+          <td>Міра цінності</td>
+          <td class="answer" contenteditable="true" data-placeholder="Приклад"></td>
+        </tr>
+        <tr>
+          <td>Засіб обігу</td>
+          <td class="answer" contenteditable="true" data-placeholder="Приклад"></td>
+        </tr>
+        <tr>
+          <td>Засіб нагромадження</td>
+          <td class="answer" contenteditable="true" data-placeholder="Приклад"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+
+
+  
+
+ <button id="submit-btn">Здати</button>
+
+  <div id="summary">
+    <h2>Підсумок</h2>
+    <div id="summary-columns"></div>
+  </div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
