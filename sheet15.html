@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Накопичувати чи позичати?</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">Робочий зошит</a></h1>
+    <h2>§12. Заощаджувати чи позичати?</h2>
+  </header>
+
+
+
+<div id="quiz">
+
+  <!-- description -->
+  <div class="task info">
+    <h2>Накопичувати чи позичати?</h2>
+    <p>
+      Обираємо між накопиченням і позичанням коштів.
+      Способи отримання грошей: заощадження, позика, кредит і розстрочка.
+      Обчислюємо процентну ставку та розмірковуємо над відповідальністю за повернення коштів.
+    </p>
+  </div>
+
+  <!-- test -->
+  <div class="task" data-type="test">
+    <div>
+      <span class="task-number">1</span>
+      <span class="task-desc">📝 Один правильний варіант</span>
+    </div>
+
+    <div class="question" data-q="1.1">
+      <span class="sub-number">1.1</span>
+      <p>Тобі пропонують купити телефон у кредит. Що це означає?</p>
+      <ul class="options">
+        <li data-value="А">а) ти отримуєш телефон безкоштовно</li>
+        <li data-value="Б">б) ти береш гроші й не повертаєш їх</li>
+        <li data-value="В">в) ти користуєшся грошима банку і повертаєш їх з відсотками</li>
+        <li data-value="Г">г) ти відкладаєш гроші</li>
+      </ul>
+      <div class="answer"></div>
+    </div>
+
+    <div class="question" data-q="1.2">
+      <span class="sub-number">1.2</span>
+      <p>Ти хочеш купити річ і бачиш варіант «оплата частинами». Це означає:</p>
+      <ul class="options">
+        <li data-value="А">а) потрібно заплатити всю суму одразу</li>
+        <li data-value="Б">б) можна оплачувати товар частинами протягом певного часу</li>
+        <li data-value="В">в) товар безкоштовний</li>
+        <li data-value="Г">г) потрібно брати кредит у друга</li>
+      </ul>
+      <div class="answer"></div>
+    </div>
+  </div>
+
+  <!-- truefalse -->
+  <div class="task" data-type="truefalse">
+    <div>
+      <span class="task-number">2</span>
+      <span class="task-desc">✔️ Так / Ні</span>
+    </div>
+
+    <div class="question true-false" data-q="2.1">
+      <span class="sub-number">2.1</span>
+      Якщо річ не є терміново потрібною, краще накопичити гроші.
+      <span class="option">✔️</span>
+      <span class="option">❌</span>
+    </div>
+
+    <div class="question true-false" data-q="2.2">
+      <span class="sub-number">2.2</span>
+      Позичені гроші можна не повертати, якщо немає можливості.
+      <span class="option">✔️</span>
+      <span class="option">❌</span>
+    </div>
+
+    <div class="question true-false" data-q="2.3">
+      <span class="sub-number">2.3</span>
+      Перед тим як брати кредит, варто оцінити свої можливості повернення.
+      <span class="option">✔️</span>
+      <span class="option">❌</span>
+    </div>
+  </div>
+
+  <!-- group -->
+  <div class="task" data-type="group">
+    <div>
+      <span class="task-number">3</span>
+      <span class="task-desc">📂 Розподіл на групи</span>
+    </div>
+
+    <div class="question" data-q="3.1">
+      <p>Розподіли фінансові рішення за групами.</p>
+
+      <ul>
+        <li>Купівля нового смартфона, якщо старий працює</li>
+        <li>Оплата термінового лікування</li>
+        <li>Покупка ігрової приставки</li>
+        <li>Ремонт зламаного холодильника</li>
+        <li>Купівля подарунка, якщо є час підготуватися</li>
+      </ul>
+
+      <div class="answer" contenteditable="true"
+           data-placeholder="А (накопичувати): ... Б (позичати): ..."></div>
+    </div>
+  </div>
+
+  <!-- gap -->
+  <div class="task" data-type="gap">
+    <div>
+      <span class="task-number">4</span>
+      <span class="task-desc">🔲 Заповни пропуски</span>
+    </div>
+
+    <div class="question" data-q="4.1">
+      <p>
+        Перед тим як брати кредит, потрібно оцінити свою
+        <span class="answer" contenteditable="true" data-placeholder="пропуск"></span>.
+        За користування позиченими грошима зазвичай сплачують
+        <span class="answer" contenteditable="true" data-placeholder="пропуск"></span>.
+      </p>
+    </div>
+  </div>
+
+  <!-- short calculation -->
+  <div class="task" data-type="short">
+    <div>
+      <span class="task-number">5</span>
+      <span class="task-desc">🧮 Обчислення</span>
+    </div>
+
+    <div class="question" data-q="5.1">
+      <p>
+        Людина взяла кредит 10 000 грн під 12% річних.
+      </p>
+      <p>
+        Обчисли суму відсотків за рік та загальну суму до повернення.
+      </p>
+      <p><em>Формула: відсотки = сума × ставка / 100</em></p>
+
+      <div class="answer" contenteditable="true"
+           data-placeholder="Відсотки: ... Загальна сума: ..."></div>
+    </div>
+  </div>
+
+  <!-- long -->
+  <div class="task" data-type="long">
+    <div>
+      <span class="task-number">6</span>
+      <span class="task-desc">💭 Ситуація</span>
+    </div>
+
+    <div class="question" data-q="6.1">
+      <p>
+        Тобі потрібно придбати ноутбук для навчання. Є два варіанти:
+      </p>
+
+      <ul>
+        <li>накопичувати гроші протягом кількох місяців;</li>
+        <li>взяти покупку в розстрочку.</li>
+      </ul>
+
+      <p>
+        Який варіант ти обереш? Поясни свою думку (2–3 речення),
+        враховуючи терміновість, витрати та можливі ризики.
+      </p>
+
+      <div class="answer long" contenteditable="true"
+           data-placeholder="Введи відповідь"></div>
+    </div>
+  </div>
+
+</div>
+  
+
+  
+  
+
+  <button id="submit-btn">Здати</button>
+
+  <div id="summary">
+    <h2>Підсумок</h2>
+    <div id="summary-columns"></div>
+  </div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
