@@ -5,7 +5,6 @@
   <title>Робочий зошит — Підприємництво та фінансова грамотність</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
-    /* Стилі відповідають оформленню з шаблону (адаптовано під головну) */
     :root{
       --bg: #e8f5f4;
       --accent: #52ab98;
@@ -22,23 +21,16 @@
       padding:28px;
       box-sizing:border-box;
     }
-
     header{ text-align:center; margin-bottom:26px; }
     header h1{ margin:0; font-size:34px; color:var(--muted); }
     header p{ margin:6px 0 0; color:var(--accent); font-size:18px; }
-
-    .container{
-      max-width:1250px;
-      margin: 0 auto;
-    }
-
+    .container{ max-width:1250px; margin: 0 auto; }
     .grid{
       display:grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap:18px;
       margin-top:22px;
     }
-
     .card{
       background: var(--card);
       border-radius:12px;
@@ -47,263 +39,172 @@
       display:flex;
       flex-direction:column;
       justify-content:space-between;
-      min-height:120px;
+      min-height:160px;
       transition: transform .12s ease, box-shadow .12s ease;
     }
-    
     .card:hover{ transform: translateY(-6px); box-shadow:0 8px 18px rgba(0,0,0,0.08); }
-    .card[disabled] {
-        pointer-events: none;
-        filter: grayscale(1);
-    }
-    .card-head{
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
+    .card-head{ display:flex; align-items:center; gap:12px; }
     .num{
-      width:44px;
-      height:44px;
-      flex-shrink: 0;
+      width:44px; height:44px; flex-shrink: 0;
       border-radius:10px;
       background: linear-gradient(180deg, var(--accent), #2f8f7a);
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:700;
-      font-size:18px;
-      box-shadow: 0 2px 6px rgba(82,171,152,0.18);
+      color:#fff; display:flex; align-items:center; justify-content:center;
+      font-weight:700; font-size:18px;
     }
-    .title{
-      font-weight:700;
-      color:var(--muted);
-      font-size:16px;
-      margin:0;
-    }
-    .subtitle{
-      font-size:13px;
-      color:#566;
-      margin-top:6px;
-    }
-
-    .card-footer{
-      margin-top:12px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-    }
-
+    .title{ font-weight:700; color:var(--muted); font-size:16px; margin:0; }
+    .subtitle-type{ font-size:13px; color:#52ab98; font-weight: 600; margin-top:4px; }
+    .description{ font-size:13px; color:#566; margin-top:12px; flex-grow: 1; }
+    .card-footer{ margin-top:12px; display:flex; justify-content:space-between; align-items:center; }
     .link-btn{
-      text-decoration:none;
-      background:var(--accent);
-      color:#fff;
-      padding:8px 12px;
-      border-radius:8px;
-      font-weight:600;
-      box-shadow:0 2px 6px rgba(82,171,152,0.12);
+      text-decoration:none; background:var(--accent); color:#fff;
+      padding:8px 14px; border-radius:8px; font-weight:600; font-size: 14px;
     }
-
-    .meta{
-      font-size:13px;
-      color:#5a6b67;
-    }
-
-    /* Footer */
-    footer{ margin-top:28px; text-align:center; color:#4b6; font-size:14px; margin-bottom: 1rem;}
-
-    @media (max-width:520px){
-      .num{ width:40px; height:40px; font-size:16px; }
-      .card{ padding:12px; }
-    }
+    .meta{ font-size:13px; color:#5a6b67; }
+    footer{ margin-top:40px; text-align:center; color:#4b6b63; font-size:14px; padding-bottom: 20px;}
   </style>
 </head>
 <body>
   <div class="container">
     <header>
       <h1>Робочий зошит</h1>
-      <p>Набір робочих аркушів для учнів з предмету <br>"Підприємництво та фінансова грамотність" </p>
+      <p>Набір робочих аркушів для учнів з предмету <br>"Підприємництво та фінансова грамотність"</p>
     </header>
 
     <main>
-      <div class="grid">
-        <!-- Карточки: змінюй title/description/посилання на свій розсуд -->
-        <div class="card">
-          <div>
-            <div class="card-head">
-              <div class="num">1</div>
-              <div>
-                <div class="title">Аркуш 1 — Поняття підприємництва</div>
-                <div class="subtitle">Тести, короткі відповіді</div>
-              </div>
-            </div>
-            <div class="subtitle" style="margin-top:12px;">Основні терміни та роль підприємця.</div>
-          </div>
-          <div class="card-footer">
-            <span class="meta">≈ 25 хв</span>
-            <a class="link-btn" href="sheet1.html">Відкрити</a>
-          </div>
+      <div class="grid" id="sheets-grid">
         </div>
-
-        <div class="card" >
-          <div>
-            <div class="card-head">
-              <div class="num">2</div>
-              <div>
-                <div class="title">Аркуш 2 — Підприєливі новачки</div>
-                <div class="subtitle">Практичні завдання</div>
-              </div>
-            </div>
-            <div class="subtitle" style="margin-top:12px;">Важливість фінансової грамотності.</div>
-          </div>
-          <div class="card-footer">
-            <span class="meta">≈ 20 хв</span>
-            <a class="link-btn" href="sheet2.html">Відкрити</a>
-          </div>
-        </div>
-
-        <div class="card" >
-          <div>
-            <div class="card-head">
-              <div class="num">3</div>
-              <div>
-                <div class="title">Аркуш 3 — Гроші в житті людини — вчора та сьогодні</div>
-                <div class="subtitle">Тести</div>
-              </div>
-            </div>
-            <div class="subtitle" style="margin-top:12px;">Шлях від економіки дарування і бартеру до сучасних грошей.</div>
-          </div>
-          <div class="card-footer">
-            <span class="meta">≈ 15 хв</span>
-            <a class="link-btn" href="sheet3.html">Відкрити</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div>
-            <div class="card-head">
-              <div class="num">4</div>
-              <div>
-                <div class="title">Аркуш 4 — Як ми розпоряджаємося грошима</div>
-                <div class="subtitle">Тести, короткі відповіді</div>
-              </div>
-            </div>
-            <div class="subtitle" style="margin-top:12px;">Ставлення до грошей у різних людей відрізняється: одні ретельно планують витрати та заощаджують, інші витрачають спонтанно або позичають.</div>
-          </div>
-          <div class="card-footer">
-            <span class="meta">≈ 15 хв</span>
-            <a class="link-btn" href="sheet4.html">Відкрити</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div>
-            <div class="card-head">
-              <div class="num">5</div>
-              <div>
-                <div class="title">Аркуш 5 — Фінансова поведінка та ризики</div>
-                <div class="subtitle">Тести, короткі відповіді, ситуація</div>
-              </div>
-            </div>
-            <div class="subtitle" style="margin-top:12px;">Кожне фінансове рішення має ризики: можна втратити гроші, недоотримати прибуток або зробити невигідну покупку.</div>
-          </div>
-          <div class="card-footer">
-            <span class="meta">≈ 20 хв</span>
-            <a class="link-btn" href="sheet5.html">Відкрити</a>
-          </div>
-        </div>
-
-        <!-- 6..15 -->
-        <div class="card" ><div><div class="card-head"><div class="num">6</div><div><div class="title">
-          Аркуш 6 — Я — раціональний споживач</div><div class="subtitle">
-          Тести, групування</div></div></div><div class="subtitle" style="margin-top:12px;">
-          Раціональний споживач — це людина, яка свідомо приймає рішення щодо покупок: відрізняє потреби від бажань, планує витрати, порівнює ціни й аналізує інформацію.</div></div><div class="card-footer"><span class="meta">
-          ≈ 15 хв.</span><a class="link-btn" href="sheet6.html">Відкрити</a></div></div>
-
-         <div class="card" ><div><div class="card-head"><div class="num">7</div><div><div class="title">
-          Аркуш 7 — Держава допомагає мені, я забезпечую державу</div><div class="subtitle">
-          Короткі питання та ситуація</div></div></div><div class="subtitle" style="margin-top:12px;">
-          Потреби та блага, які з них може забезпечувати держава.</div></div><div class="card-footer"><span class="meta">
-          ≈ 20 хв.</span><a class="link-btn" href="sheet7.html">Відкрити</a></div></div>
-
-         <div class="card" ><div><div class="card-head"><div class="num">8</div><div><div class="title">
-          Аркуш 8 — Гроші, споживання та фінансова поведінка</div><div class="subtitle">
-          Тестові питання та таблиця</div></div></div><div class="subtitle" style="margin-top:12px;">
-          Робота узагальнює знання учнів про роль грошей у житті людини,
-      фінансову грамотність, раціональне споживання, економію, прибуток,
-      ризики, суспільні та приватні блага, а також взаємозв’язок громадян і держави.
-          </div></div><div class="card-footer"><span class="meta">
-          ≈ 20 хв.</span><a class="link-btn" href="sheet8.html">Відкрити</a></div></div>
-        
-             <div class="card" ><div><div class="card-head"><div class="num">9</div><div><div class="title">
-          Аркуш 9 — Ресурси й наші потреби</div><div class="subtitle">
-          Тестові питання та ситуація</div></div></div><div class="subtitle" style="margin-top:12px;">
-          Людські потреби постійно зростають, але ресурси, за допомогою яких їх задовольняють,
-      є обмеженими. Для виробництва товарів і послуг необхідні різні ресурси: природні,
-      людські, фінансові та підприємницькі. Уміння правильно визначати та раціонально
-      використовувати ресурси допомагає приймати зважені економічні рішення.
-          </div></div><div class="card-footer"><span class="meta">
-          ≈ 20 хв.</span><a class="link-btn" href="sheet9.html">Відкрити</a></div></div>
-      <div class="card" ><div><div class="card-head"><div class="num">10</div><div><div class="title">
-          Аркуш 10 — Потреби й наш вибір</div><div class="subtitle">
-          Тестові питання та ситуація</div></div></div><div class="subtitle" style="margin-top:12px;">
-          Люди мають різні потреби, але можливості для їх задоволення завжди обмежені. Тому кожна людина постійно робить вибір. Потреби мають певну ієрархію — від базових фізіологічних до потреб у самореалізації. Усвідомлення цієї ієрархії допомагає приймати більш раціональні рішення в повсякденному житті..
-          </div></div><div class="card-footer"><span class="meta">
-          ≈ 20 хв.</span><a class="link-btn" href="sheet10.html">Відкрити</a></div></div>
-        
-            <div class="card" ><div><div class="card-head"><div class="num">11</div><div><div class="title">
-          Аркуш 11 — Плануємо доходи й витрати</div><div class="subtitle">
-          Тестові питання та ситуація</div></div></div><div class="subtitle" style="margin-top:12px;">
-         Формування навичок раціонального використання фінансових ресурсів, відповідального ставлення до грошей і прийняття обґрунтованих фінансових рішень у повсякденному житті.
-          </div></div><div class="card-footer"><span class="meta">
-          ≈ 20 хв.</span><a class="link-btn" href="sheet11.html">Відкрити</a></div></div>
-
-         <div class="card" ><div><div class="card-head"><div class="num">12</div><div><div class="title">
-          Аркуш 12 — Кишенькові гроші — свобода чи відповідальність?</div><div class="subtitle">
-          Тестові питання та таблиця</div></div></div><div class="subtitle" style="margin-top:12px;">
-Аналізуємо фінансову свободу та як вона пов’язана з відповідальністю. Особлива увага
-      приділяється плануванню витрат, заощадженню, прийняттю зважених рішень
-      і розумній економії.          </div></div><div class="card-footer"><span class="meta">
-          ≈ 20 хв.</span><a class="link-btn" href="sheet12.html">Відкрити</a></div></div>
-      
-          <div class="card" ><div><div class="card-head"><div class="num">13</div><div><div class="title">
-          Аркуш 13 — Заощадження та депозит</div><div class="subtitle">
-          Питання та розрахунки</div></div></div><div class="subtitle" style="margin-top:12px;">
-Діхнаємось більше про притання заощаджень та депозитів, як одного зі способів отримання доходів. Обчислюємо доходи по депозиту.         </div></div><div class="card-footer"><span class="meta">
-          ≈ 20 хв.</span><a class="link-btn" href="sheet13.html">Відкрити</a></div></div>
-        
-                 <div class="card" ><div><div class="card-head"><div class="num">14</div><div><div class="title">
-          Аркуш 14 — Заощаджувати чи позичати?</div><div class="subtitle">
-          Тестові питання, розподіл по групах, ситуація</div></div></div><div class="subtitle" style="margin-top:12px;">
-Коли доцільно заощаджувати та позичати? Способи отримання грошей у разі потреби: накопичення, позика, кредит і розстрочка. Поняття процентної ставки та обов’язку повернення коштів.</div></div><div class="card-footer"><span class="meta">
-          ≈ 20 хв.</span><a class="link-btn" href="sheet14.html">Відкрити</a></div></div>
-        
-          <div class="card" ><div><div class="card-head"><div class="num">15</div><div><div class="title">
-          Аркуш 15 — Накопичувати чи позичати?</div><div class="subtitle">
-          Тестові питання, розподіл по групах, ситуація</div></div></div><div class="subtitle" style="margin-top:12px;">
-      Обираємо між накопиченням і позичанням коштів.
-      Способи отримання грошей: заощадження, позика, кредит і розстрочка.
-      Обчислюємо процентну ставку та розмірковуємо над відповідальністю за повернення коштів.</div></div><div class="card-footer"><span class="meta">
-          ≈ 20 хв.</span><a class="link-btn" href="sheet15.html">Відкрити</a></div></div>
-           
-          <div class="card" ><div><div class="card-head"><div class="num">16</div><div><div class="title">
-          Аркуш 16 — Гроші працюють: інвестиції</div><div class="subtitle">
-          Так/Ні, розподіл по групах, ситуація</div></div></div><div class="subtitle" style="margin-top:12px;">
-            Інвестування як спосіб отримання прибутку.
-    Як гроші можуть «працювати» через вкладення у бізнес,
-      стартапи та фінансові інструменти.Зв’язок між ризиком
-      і прибутком.</div></div><div class="card-footer"><span class="meta">
-          ≈ 20 хв.</span><a class="link-btn" href="sheet16.html">Відкрити</a></div></div>
-        
-      </div>
     </main>
 
-    <footer style="margin-top:28px; text-align:center; color:#4b6b63;">
-      <p>Завданя складені згідно програми Стеценко І. Б. та Андрусич О. О.</p>
-      <p>Автор завдань вчитель ЗЗСО бахмутьскої міської ради Якубчак А.О. </p>
-      <br>
+    <footer>
+      <p>Завдання складені згідно програми Стеценко І. Б. та Андрусич О. О.</p>
+      <p>Автор завдань: вчитель ЗЗСО Бахмутської міської ради Якубчак А.О.</p>
     </footer>
   </div>
+
+  <script>
+const sheets = [
+  { 
+    title: "Поняття підприємництва", 
+    type: "Тести, короткі відповіді", 
+    desc: "Досліджуємо сутність підприємницької діяльності, ключові риси особистості підприємця та його роль у розвитку сучасної економіки.", 
+    time: "25" 
+  },
+  { 
+    title: "Підприємливі новачки", 
+    type: "Практичні завдання", 
+    desc: "Аналізуємо значення фінансової грамотності як фундаменту для успішного старту власної справи та управління особистими ресурсами.", 
+    time: "20" 
+  },
+  { 
+    title: "Гроші в житті людини — вчора та сьогодні", 
+    type: "Тести", 
+    desc: "Вивчаємо еволюцію грошових відносин: від історичних форм бартеру до функціонування сучасних цифрових платіжних систем.", 
+    time: "15" 
+  },
+  { 
+    title: "Як ми розпоряджаємося грошима", 
+    type: "Тести, короткі відповіді", 
+    desc: "Розглядаємо різні моделі фінансової поведінки, важливість свідомого планування бюджету та критичного ставлення до спонтанних витрат.", 
+    time: "15" 
+  },
+  { 
+    title: "Фінансова поведінка та ризики", 
+    type: "Тести, короткі відповіді, ситуація", 
+    desc: "Оцінюємо взаємозв'язок між фінансовими рішеннями та потенційними ризиками, вчимося мінімізувати втрати та прогнозувати наслідки вибору.", 
+    time: "20" 
+  },
+  { 
+    title: "Я — раціональний споживач", 
+    type: "Тести, групування", 
+    desc: "Формуємо навички раціонального споживання: вчимося розрізняти першочергові потреби й бажання та порівнювати ринкові пропозиції.", 
+    time: "15" 
+  },
+  { 
+    title: "Держава допомагає мені, я забезпечую державу", 
+    type: "Короткі питання та ситуація", 
+    desc: "З'ясовуємо механізми взаємодії громадянина та держави через систему суспільних благ, податків та взаємної відповідальності.", 
+    time: "20" 
+  },
+  { 
+    title: "Гроші, споживання та фінансова поведінка", 
+    type: "Тестові питання та таблиця", 
+    desc: "Систематизуємо знання про фінансову грамотність, раціональний підхід до ресурсів та економічну роль особистості в суспільстві.", 
+    time: "20" 
+  },
+  { 
+    title: "Ресурси й наші потреби", 
+    type: "Тестові питання та ситуація", 
+    desc: "Вивчаємо проблему обмеженості природних та фінансових ресурсів у контексті постійного зростання людських потреб.", 
+    time: "20" 
+  },
+  { 
+    title: "Потреби й наш вибір", 
+    type: "Тестові питання та ситуація", 
+    desc: "Опрацьовуємо ієрархію потреб та вчимося приймати зважені рішення в умовах необхідності вибору між альтернативними варіантами.", 
+    time: "20" 
+  },
+  { 
+    title: "Плануємо доходи й витрати", 
+    type: "Тестові питання та ситуація", 
+    desc: "Опановуємо інструменти контролю грошових потоків, формування структури доходів та оптимізації повсякденних витрат.", 
+    time: "20" 
+  },
+  { 
+    title: "Кишенькові гроші — свобода чи відповідальність?", 
+    type: "Тестові питання та таблиця", 
+    desc: "Дискутуємо про культуру користування особистими коштами, баланс між фінансовою незалежністю та відповідальним плануванням.", 
+    time: "20" 
+  },
+  { 
+    title: "Заощадження та депозит", 
+    type: "Питання та розрахунки", 
+    desc: "Досліджуємо банківські інструменти збереження коштів та вчимося обчислювати прибутковість депозитів як джерела пасивного доходу.", 
+    time: "20" 
+  },
+  { 
+    title: "Заощаджувати чи позичати?", 
+    type: "Тести, групи, ситуація", 
+    desc: "Порівнюємо стратегії накопичення та залучення кредитних коштів, аналізуємо умови розстрочки та вартість позикового капіталу.", 
+    time: "20" 
+  },
+  { 
+    title: "Накопичувати чи позичати?", 
+    type: "Тести, групи, ситуація", 
+    desc: "Поглиблюємо розуміння процентних ставок та відповідальності за кредитні зобов'язання перед фінансовими установами.", 
+    time: "20" 
+  },
+  { 
+    title: "Гроші працюють: інвестиції", 
+    type: "Так/Ні, групи, ситуація", 
+    desc: "Знайомимося з основами інвестування в бізнес та стартапи, вивчаючи фундаментальний зв’язок між рівнем ризику та очікуваним прибутком.", 
+    time: "20" 
+  }
+];
+
+    const grid = document.getElementById('sheets-grid');
+
+    sheets.forEach((sheet, index) => {
+      const num = index + 1;
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div>
+          <div class="card-head">
+            <div class="num">${num}</div>
+            <div>
+              <div class="title">Аркуш ${num} — ${sheet.title}</div>
+              <div class="subtitle-type">${sheet.type}</div>
+            </div>
+          </div>
+          <div class="description">${sheet.desc}</div>
+        </div>
+        <div class="card-footer">
+          <span class="meta">≈ ${sheet.time} хв</span>
+          <a class="link-btn" href="sheet${num}.html">Відкрити</a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
 </body>
 </html>
