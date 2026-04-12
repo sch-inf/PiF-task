@@ -4,74 +4,74 @@
   <meta charset="utf-8" />
   <title>Робочий зошит — Підприємництво та фінансова грамотність</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style>
-/* Додати до тегу <style> в index.html */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
 
-.card {
-  background: var(--card-bg);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid transparent;
-}
+  .card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(82, 171, 152, 0.05);
+  }
 
-.card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent);
-  box-shadow: 0 8px 20px rgba(43, 103, 119, 0.15);
-}
+  .card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 20px rgba(43, 103, 119, 0.15);
+  }
 
-.card-head { display: flex; align-items: flex-start; gap: 15px; }
+  .card-head { display: flex; align-items: flex-start; gap: 15px; }
 
-.num {
-  background: var(--accent);
-  color: #fff;
-  min-width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  font-size: 18px;
-}
+  .num {
+    background: var(--accent);
+    color: #fff;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+  }
 
-.title { font-weight: 700; color: var(--muted); font-size: 18px; margin-bottom: 5px; }
-.subtitle-type { font-size: 14px; color: var(--accent); font-weight: 600; text-transform: uppercase; }
-.card-desc { font-size: 15px; color: #666; margin: 15px 0; flex-grow: 1; }
+  .title { font-weight: 700; color: var(--muted); font-size: 18px; line-height: 1.3; }
+  .subtitle-type { font-size: 13px; color: var(--accent); font-weight: 600; text-transform: uppercase; margin-top: 4px; }
+  .card-desc { font-size: 15px; color: #666; margin: 15px 0; flex-grow: 1; line-height: 1.5; }
 
-.card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 15px;
-  border-top: 1px solid #f0f0f0;
-}
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+  }
 
-.meta { font-size: 14px; color: #999; }
+  .meta { font-size: 14px; color: #999; }
 
-.link-btn {
-  background: var(--muted);
-  color: #fff;
-  text-decoration: none;
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-size: 14px;
-  transition: background 0.3s;
-}
+  .link-btn {
+    background: var(--muted);
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s;
+  }
 
-.link-btn:hover { background: var(--accent); }
-  </style>
+  .link-btn:hover { background: var(--accent); }
+</style>
 </head>
 <body>
   <div class="container">
