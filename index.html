@@ -61,6 +61,26 @@
     }
     .meta{ font-size:13px; color:#5a6b67; }
     footer{ margin-top:40px; text-align:center; color:#4b6b63; font-size:14px; padding-bottom: 20px;}
+
+    .card:hover .link-btn {
+  background-color: var(--muted);
+  color: #fff;
+}
+
+.card .link-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.meta {
+  position: relative;
+  z-index: 2;
+}
   </style>
 </head>
 <body>
