@@ -1,110 +1,138 @@
 :root {
-  /* Основна палітра */
   --bg: #e8f5f4;
   --accent: #52ab98;
   --accent-hover: #459684;
   --muted: #2b6777;
-  --text: #222;
+  --text: #333;
   --card-bg: #ffffff;
   --info-bg: #ebffde;
-  --shadow: 0 4px 12px rgba(43, 103, 119, 0.08);
-  --border-radius: 14px;
+  --shadow: 0 4px 12px rgba(43, 103, 119, 0.1);
+  --border-radius: 12px;
 }
 
+/* Базові налаштування */
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   background-color: var(--bg);
-  margin: 0;
+  margin: 0 auto;
   padding: 20px;
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 18px;
+  max-width: 1250px;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Заголовки */
-header { text-align: center; margin-bottom: 40px; }
-header h1 { font-size: 38px; margin: 0; color: var(--muted); }
-header a { text-decoration: none; color: inherit; transition: color 0.3s; }
+header { text-align: center; margin-bottom: 30px; }
+header h1 { font-size: 34px; margin: 0; color: var(--muted); }
+header a { color: inherit; text-decoration: none; transition: color 0.3s; }
 header a:hover { color: indianred; }
-header h2 { font-size: 24px; font-weight: 400; color: var(--accent); margin-top: 10px; }
+header h2 { font-size: 24px; font-weight: 400; color: var(--accent); margin-top: 5px; }
 
-/* Картки завдань (для аркушів) */
+/* Контейнери завдань */
 .task { 
   background: var(--card-bg); 
   border-radius: var(--border-radius); 
   box-shadow: var(--shadow); 
   padding: 25px; 
-  margin-bottom: 30px; 
-  border: 1px solid rgba(82, 171, 152, 0.1);
+  margin: 25px 0; 
+  page-break-inside: avoid; 
 }
 
 .info { 
   background: var(--info-bg); 
   border: 1px dashed var(--accent); 
-  font-size: 17px; 
+  font-size: 16px; 
 }
 
-/* Інтерактивні елементи */
+.task-number { font-weight: bold; color: var(--muted); margin-right: 10px; }
+.task-desc { font-weight: 600; color: var(--accent); }
+
 .question { 
-  background-color: #f6fdfc; 
+  background-color: #f7fdfc; 
   border-radius: 10px; 
   padding: 20px; 
   margin-top: 15px; 
+  position: relative;
 }
 
+/* ФУНКЦІОНАЛЬНІ СТИЛІ (Важливо для скрипта) */
+
+/* Тести та Множинний вибір */
+.options { list-style: none; padding: 0; margin: 15px 0; }
 .options li {
-  list-style: none;
-  padding: 12px 15px;
+  padding: 12px 18px;
   margin: 8px 0;
   background: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #dee2e6;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+}
+.options li:hover { border-color: var(--accent); background: #f0f9f8; }
+.options li.selected { 
+  background-color: var(--accent) !important; 
+  color: #fff !important; 
+  border-color: var(--accent); 
 }
 
-.options li:hover { border-color: var(--accent); background: #f0fff4; }
-.options li.selected { background: var(--accent); color: #fff; border-color: var(--accent); }
-
-[contenteditable="true"] {
-  border-bottom: 2px solid #ddd;
-  padding: 2px 8px;
-  transition: border-color 0.3s;
-}
-
-[contenteditable="true"]:focus {
+/* Поля вводу та Placeholder */
+.answer {
+  display: inline-block;
+  min-width: 50px;
+  border-bottom: 2px solid #ccc;
+  padding: 2px 6px;
   outline: none;
-  border-bottom-color: var(--accent);
-  background: #f9fffb;
+  transition: all 0.3s;
+  position: relative;
+}
+.answer:focus { border-bottom-color: var(--accent); background: #f9fffb; }
+
+/* Логіка підказок (data-placeholder) */
+[contenteditable="true"]:empty:before {
+  content: attr(data-placeholder);
+  color: #aaa;
+  font-style: italic;
+  font-size: 15px;
+  pointer-events: none;
 }
 
-/* Кнопки */
+/* Так / Ні (True-False) */
+.true-false { display: flex; align-items: center; gap: 20px; }
+.option { 
+  font-size: 24px; 
+  cursor: pointer; 
+  padding: 5px 10px; 
+  border-radius: 6px; 
+  transition: background 0.2s; 
+}
+.option.selected { background-color: #cdeee9; transform: scale(1.1); }
+
+/* Таблиці */
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+th { background-color: #f0f7f6; color: var(--muted); padding: 12px; border: 1px solid #dee2e6; }
+td { padding: 12px; border: 1px solid #dee2e6; background: #fff; }
+
+/* Кнопка здати */
 #submit-btn {
   display: block;
   margin: 40px auto;
-  padding: 16px 40px;
+  padding: 15px 45px;
   font-size: 20px;
   background-color: var(--accent);
   color: #fff;
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  transition: transform 0.2s, background 0.3s;
+  box-shadow: 0 4px 10px rgba(82, 171, 152, 0.3);
 }
+#submit-btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
 
-#submit-btn:hover { background: var(--accent-hover); transform: translateY(-2px); }
-
-/* Адаптація таблиць */
-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-th { background: #f0f7f6; color: var(--muted); padding: 12px; }
-td { padding: 12px; border: 1px solid #e0e0e0; }
-
-@media (max-width: 768px) {
-  body { padding: 15px; }
-  header h1 { font-size: 28px; }
+/* Підсумок */
+#summary {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 30px;
+  display: none; /* Показується скриптом */
+  border: 2px solid var(--accent);
 }
