@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Фінансова безпека та шахрайство</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">Робочий зошит</a></h1>
+     <h2>§14. Фінансова безпека та шахрайство</h2>
+  </header>
+
+
+
+<div id="quiz">
+
+  <!-- description -->
+  <div class="task info">
+   
+    <p>
+      Фінансова безпека, захист персональних даних,
+      поширені види фінансового шахрайства та правила безпечної поведінки.
+    </p>
+  </div>
+
+  <!-- truefalse -->
+  <div class="task" data-type="truefalse">
+    <div>
+      <span class="task-number">1</span>
+      <span class="task-desc">✔️ Так / Ні</span>
+    </div>
+
+    <div class="question true-false" data-q="1.1">
+      <span class="sub-number">1.1</span>
+      PIN-код не можна повідомляти іншим особам.
+      <span class="option">✔️</span>
+      <span class="option">❌</span>
+    </div>
+
+    <div class="question true-false" data-q="1.2">
+      <span class="sub-number">1.2</span>
+      Перед оформленням фінансової послуги варто читати умови договору.
+      <span class="option">✔️</span>
+      <span class="option">❌</span>
+    </div>
+
+    <div class="question true-false" data-q="1.3">
+      <span class="sub-number">1.3</span>
+      Шахрайство можливе лише під час онлайн-покупок.
+      <span class="option">✔️</span>
+      <span class="option">❌</span>
+    </div>
+  </div>
+
+
+  <!-- table safe choice -->
+  <div class="task" data-type="table">
+    <div>
+      <span class="task-number">2</span>
+      <span class="task-desc">📊 Обери безпечнішу дію</span>
+    </div>
+
+    <div class="question" data-q="2.1">
+
+      <table border="1" style="width:100%; border-collapse:collapse;">
+        <tr>
+          <th>Ситуація</th>
+          <th>Варіант 1</th>
+          <th>Варіант 2</th>
+          <th>Обери безпечніший ✔</th>
+        </tr>
+
+        <tr>
+          <td>Покупка в інтернеті</td>
+          <td>Ввести дані картки на невідомому сайті</td>
+          <td>Перевірити сайт і оплатити без прямого введення картки на сайті</td>
+          <td class="answer" contenteditable="true"></td>
+        </tr>
+
+        <tr>
+          <td>Використання картки</td>
+          <td>Писати PIN на картці</td>
+          <td>Запам'ятати PIN і не записувати у явному вигляді</td>
+          <td class="answer" contenteditable="true"></td>
+        </tr>
+
+        <tr>
+          <td>Повідомлення про виграш</td>
+          <td>Перейти за посиланням</td>
+          <td>Перевірити інформацію без переходу за посиланням</td>
+          <td class="answer" contenteditable="true"></td>
+        </tr>
+
+      </table>
+
+    </div>
+  </div>
+
+
+  <!-- group -->
+  <div class="task" data-type="group">
+    <div>
+      <span class="task-number">3</span>
+      <span class="task-desc">📂 Розподіл на групи</span>
+    </div>
+
+    <div class="question" data-q="3.1">
+
+      <p>Розподіли поняття на дві групи:</p>
+
+      <ul>
+        <li>Фішинг</li>
+        <li>Скімінг</li>
+        <li>Двоетапна перевірка</li>
+        <li>Ліміти на зняття коштів</li>
+        <li>Соціальний інжиніринг</li>
+      </ul>
+
+      <div class="answer"
+           contenteditable="true"
+           data-placeholder="А — види шахрайства: ... Б — засоби захисту: ..."></div>
+
+    </div>
+  </div>
+
+
+  <!-- gap -->
+  <div class="task" data-type="gap">
+    <div>
+      <span class="task-number">4</span>
+      <span class="task-desc">🔲 Заповни пропуски</span>
+    </div>
+
+    <div class="question" data-q="4.1">
+      <p>
+        Перед онлайн-оплатою варто перевіряти
+        <span class="answer" contenteditable="true" data-placeholder="пропуск"></span>
+        сайту.
+      </p>
+
+      <p>
+        Підозрілі повідомлення не слід відкривати або переходити за
+        <span class="answer" contenteditable="true" data-placeholder="пропуск"></span>.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- long -->
+  <div class="task" data-type="long">
+    <div>
+      <span class="task-number">5</span>
+      <span class="task-desc">💭 Ситуація</span>
+    </div>
+
+    <div class="question" data-q="5.1">
+
+      <p>
+        Тобі в соцмережі написали з акаунта знайомого:
+      </p>
+
+      <p>
+        «Можеш позичити 500 грн? Скинь на картку, ось номер.
+        Я пізніше наберу тебе!»
+      </p>
+
+      <p>
+        Що варто зробити перед тим, як переказувати гроші?
+        Які ознаки можуть свідчити, що акаунт могли зламати?
+      </p>
+
+      <div class="answer long"
+           contenteditable="true"
+           data-placeholder="Введи відповідь"></div>
+
+    </div>
+  </div>
+
+</div>
+  
+  
+
+  <button id="submit-btn">Здати</button>
+
+  <div id="summary">
+    <h2>Підсумок</h2>
+    <div id="summary-columns"></div>
+  </div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
