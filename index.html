@@ -81,27 +81,13 @@ const courseData = {
  ]
 };
 function renderGrid(cl) {
- const g = document.getElementById(`sheets-grid-${cl}`); g.innerHTML = "";
- courseData[cl].forEach((s, i) => {
-  const card = document.createElement('div'); card.className = 'card';
-  card.innerHTML = `<div><div class="card-head"><div class="num">${i+1}</div><div><div class="title">Аркуш ${i+1} — ${s.title}</div><div class="subtitle-type">${s.type}</div></div></div><div class="description">${s.desc}</div></div><div class="card-footer"><span class="meta">≈ ${s.time} хв</span><a class="link-btn" href="class${cl}_sheet${i+1}.html">Відкрити</a></div>`;
-  g.appendChild(card);
- });
-}
-function switchClass(cl, fromHash = false) {
- document.querySelectorAll('.tab-btn').forEach(b => {
-  b.classList.remove('active');
-  if(b.textContent.trim().startsWith(cl)) b.classList.add('active');
- });
- document.querySelectorAll('.grid').forEach(g => g.classList.remove('active'));
- document.getElementById(`sheets-grid-${cl}`).classList.add('active');
- if(cl === "9") { document.body.setAttribute('data-class', '9'); } else { document.body.removeAttribute('data-class'); }
- if (!fromHash) { history.replaceState(null, null, `#class${cl}`); }
-}
+ const g = document.getElementById(`sheets-grid-${cl}`); g.innerHTML = ""; courseData[cl].forEach((s, i) => {  const card = document.createElement('div'); card.className = 'card';  card.innerHTML = `<div><div class="card-head"><div class="num">${i+1}</div><div><div class="title">Аркуш ${i+1} — ${s.title}</div><div class="subtitle-type">${s.type}</div></div></div><div class="description">${s.desc}</div></div><div class="card-footer"><span class="meta">≈ ${s.time} хв</span><a class="link-btn" href="class${cl}_sheet${i+1}.html">Відкрити</a></div>`;g.appendChild(card);});}
+ function switchClass(cl, fromHash = false) {
+ document.querySelectorAll('.tab-btn').forEach(b => {  b.classList.remove('active');  if(b.textContent.trim().startsWith(cl)) b.classList.add('active'); });
+ document.querySelectorAll('.grid').forEach(g => g.classList.remove('active')); document.getElementById(`sheets-grid-${cl}`).classList.add('active');
+ if(cl === "9") { document.body.setAttribute('data-class', '9'); } else { document.body.removeAttribute('data-class'); } if (!fromHash) { history.replaceState(null, null, `#class${cl}`); }}
 renderGrid("8"); renderGrid("9");
-function initFromHash() {
- if (window.location.hash === "#class9") { switchClass("9", true); } else { switchClass("8", true); }
-}
+function initFromHash() { if (window.location.hash === "#class9") { switchClass("9", true); } else { switchClass("8", true); }}
 initFromHash();
 </script>
 </body>
