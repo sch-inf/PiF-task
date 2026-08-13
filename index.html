@@ -76,13 +76,46 @@ const courseData = {
   { title: "Підсумковий робочий аркуш", type: "Тести, так/ні, групування, таблиця, пропуски, кейс", desc: "Узагальнюємо знання про доходи, витрати, кредити, депозити, інвестування та фінансову безпеку, аналізуючи відповідальні фінансові рішення й способи захисту від шахрайства.", time: "20" }
  ],
  "9": [
-  { title: "Економічний розвиток і глобалізація", type: "Тести, аналіз кейсів", desc: "Вивчаємо сучасні світові тренди та інтеграцію України у світовий економічний простір.", time: "25" },
+  {
+   title: "Підприємництво та мистецтво бачити можливості",
+   type: "Тест, множинний вибір, відповідність, послідовність, кейс",
+   desc: "Досліджуємо сутність підприємництва, розпізнаємо підприємливі якості та порівнюємо підприємництво, роботу за наймом і фриланс як різні професійні шляхи.",
+   time: "20"
+  },
   { title: "Сучасний ринок праці та професії майбутнього", type: "Дискусія, планування кар'єри", desc: "Аналізуємо затребувані навички, вчимося складати перше резюме та ставити кар'єрні цілі.", time: "20" }
  ]
 };
-function renderGrid(cl) {
- const g = document.getElementById(`sheets-grid-${cl}`); g.innerHTML = ""; courseData[cl].forEach((s, i) => {  const card = document.createElement('div'); card.className = 'card';  card.innerHTML = `<div><div class="card-head"><div class="num">${i+1}</div><div><div class="title">Аркуш ${i+1} — ${s.title}</div><div class="subtitle-type">${s.type}</div></div></div><div class="description">${s.desc}</div></div><div class="card-footer"><span class="meta">≈ ${s.time} хв</span><a class="link-btn" href="class${cl}_sheet${i+1}.html">Відкрити</a></div>`;g.appendChild(card);});}
- function switchClass(cl, fromHash = false) {
+
+  function renderGrid(cl) {
+ const g = document.getElementById(`sheets-grid-${cl}`); g.innerHTML = "";
+ courseData[cl].forEach((s, i) => {
+  const card = document.createElement('div'); card.className = 'card';
+  
+  // Перетворюємо номер індексу на двозначний формат (1 -> "01", 10 -> "10")
+  const numPad = String(i + 1).padStart(2, '0');
+  
+  // Формуємо правильний href відповідно до поточної структури файлів
+  const fileHref = cl === "8" ? `sheet${numPad}.html` : `sheet9_${numPad}.html`;
+  
+  card.innerHTML = `<div><div class="card-head"><div class="num">${i+1}</div><div><div class="title">Аркуш ${i+1} — ${s.title}</div><div class="subtitle-type">${s.type}</div></div></div><div class="description">${s.desc}</div></div><div class="card-footer"><span class="meta">≈ ${s.time} хв</span><a class="link-btn" href="${fileHref}">Відкрити</a></div>`;
+  g.appendChild(card);
+ });
+}
+
+function switchClass(cl, fromHash = false) {
+ document.querySelectorAll('.tab-btn').forEach(b => {
+  b.classList.remove('active');
+  if(b.textContent.trim().startsWith(cl)) b.classList.add('active');
+ });
+ document.querySelectorAll('.grid').forEach(g => g.classList.remove('active'));
+ document.getElementById(`sheets-grid-${cl}`).classList.add('active');
+ if(cl === "9") { document.body.setAttribute('data-class', '9'); } else { document.body.removeAttribute('data-class'); }
+ if (!fromHash) { history.replaceState(null, null, `#class${cl}`); }
+}
+
+  
+  
+  function switchClass(cl, fromHash = false) {
  document.querySelectorAll('.tab-btn').forEach(b => {  b.classList.remove('active');  if(b.textContent.trim().startsWith(cl)) b.classList.add('active'); });
  document.querySelectorAll('.grid').forEach(g => g.classList.remove('active')); document.getElementById(`sheets-grid-${cl}`).classList.add('active');
  if(cl === "9") { document.body.setAttribute('data-class', '9'); } else { document.body.removeAttribute('data-class'); } if (!fromHash) { history.replaceState(null, null, `#class${cl}`); }}
