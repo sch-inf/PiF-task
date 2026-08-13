@@ -5,34 +5,27 @@
  <title>Робочий зошит — Підприємництво та фінансова грамотність</title>
  <meta name="viewport" content="width=device-width,initial-scale=1" />
  <style>
- /* Дефолтна палітра для 8 класу (Смарагдова) */
  :root{
  --bg:#f0f8f7;--accent:#419382;--muted:#1e4c58;--card:#fff;--text:#2d3748;
  --gradient-start:#e6f4f2;--gradient-end:#f0f7f6;--num-grad:#2b7566;--btn-bg:#f0f7f6;
  }
- /* Нова палітра для 9 класу (Індиго / Синя) */
  [data-class="9"] {
  --bg:#f0f4f8;--accent:#3b71ca;--muted:#1c3d5a;
  --gradient-start:#e3ebf6;--gradient-end:#f0f4f8;--num-grad:#2a52be;--btn-bg:#ebf2fa;
  }
  html,body{height:100%;margin:0;}
- /* Додано плавність transition для всіх колірних елементів */
  body{font-family:"Inter",system-ui,sans-serif;background:linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);color:var(--text);line-height:1.6;padding:32px 24px;box-sizing:border-box;transition: background 0.5s ease;}
  header,footer{text-align:center;}header{margin-bottom:32px;}
  header h1{margin:0;font-size:38px;font-weight:800;color:var(--muted);letter-spacing:-0.5px;transition:color 0.5s;}
  header p{margin:8px 0 0;color:var(--accent);font-size:19px;font-weight:500;transition:color 0.5s;}
  .container{max-width:1250px;margin:0 auto;}footer{margin-top:50px;color:#617d76;font-size:14px;padding-bottom:20px;border-top:1px solid rgba(82,171,152,0.15);padding-top:20px;}
- 
- /* НАВІГАЦІЯ ТА СІТКА */
- .tabs-nav{display:flex;justify-content:center;gap:14px;margin:28px 0;}
+  .tabs-nav{display:flex;justify-content:center;gap:14px;margin:28px 0;}
  .tab-btn{background:var(--card);color:var(--muted);border:none;padding:12px 28px;border-radius:24px;font-weight:700;font-size:16px;cursor:pointer;transition:all .3s cubic-bezier(0.4,0,0.2,1);box-shadow:0 4px 12px rgba(0,0,0,0.03);}
  .tab-btn:hover{color:var(--accent);transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,0.06);}
  .tab-btn.active{background:var(--accent);color:#fff;box-shadow:0 8px 20px rgba(65,147,130,0.25);}
  [data-class="9"] .tab-btn.active{box-shadow:0 8px 20px rgba(59,113,202,0.25);}
  .grid{display:none;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px;margin-top:24px;}
  .grid.active{display:grid;}
- 
- /* КАРТКИ */
  .card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 4px 18px rgba(0,0,0,0.03);display:flex;flex-direction:column;justify-content:space-between;min-height:170px;position:relative;overflow:hidden;transition:all .3s cubic-bezier(0.4,0,0.2,1);border:1px solid rgba(0,0,0,0.02);}
  .card:hover{transform:translateY(-6px);box-shadow:0 12px 28px rgba(30,76,88,0.08);border-color:rgba(82,171,152,0.15);}
  [data-class="9"] .card:hover{box-shadow:0 12px 28px rgba(28,61,90,0.08);border-color:rgba(59,113,202,0.15);}
@@ -56,10 +49,10 @@
  <p>Набір робочих аркушів для учнів з предмету <br>"Підприємництво та фінансова грамотність"</p>
  </header>
 
- <div class="tabs-nav">
- <button class="tab-btn active" onclick="switchClass('8', event)">8 Клас</button>
- <button class="tab-btn" onclick="switchClass('9', event)">9 Клас</button>
- </div>
+<div class="tabs-nav">
+ <button class="tab-btn active" onclick="switchClass('8')">8 Клас</button>
+ <button class="tab-btn" onclick="switchClass('9')">9 Клас</button>
+</div>
 
  <main>
  <div class="grid active" id="sheets-grid-8"></div>
