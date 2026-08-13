@@ -1,247 +1,198 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <title>Робочий зошит — Підприємництво та фінансова грамотність</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style>
-    :root{
-      --bg: #e8f5f4;
-      --accent: #52ab98;
-      --muted: #2b6777;
-      --card: #fff;
-      --card-soft: #f5fdfc;
-    }
-    html,body{height:100%; margin:0;}
-    body{
-      font-family: "Inter", Arial, sans-serif;
-      background-color: var(--bg);
-      color:#222;
-      line-height:1.5;
-      padding:28px;
-      box-sizing:border-box;
-    }
-    header{ text-align:center; margin-bottom:26px; }
-    header h1{ margin:0; font-size:34px; color:var(--muted); }
-    header p{ margin:6px 0 0; color:var(--accent); font-size:18px; }
-    .container{ max-width:1250px; margin: 0 auto; }
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap:18px;
-      margin-top:22px;
-    }
-    .card{
-      background: var(--card);
-      border-radius:12px;
-      padding:16px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.06);
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      min-height:160px;
-      transition: transform .12s ease, box-shadow .12s ease;
-    }
-    .card {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-    .card:hover{ transform: translateY(-6px); box-shadow:0 8px 18px rgba(0,0,0,0.08); }
-    .card-head{ display:flex; align-items:center; gap:12px; }
-    .num{
-      width:44px; height:44px; flex-shrink: 0;
-      border-radius:10px;
-      background: linear-gradient(180deg, var(--accent), #2f8f7a);
-      color:#fff; display:flex; align-items:center; justify-content:center;
-      font-weight:700; font-size:18px;
-    }
-    .title{ font-weight:700; color:var(--muted); font-size:16px; margin:0; }
-    .subtitle-type{ font-size:13px; color:#52ab98; font-weight: 600; margin-top:4px; }
-    .description{ font-size:13px; color:#566; margin-top:12px; flex-grow: 1; }
-    .card-footer{ margin-top:12px; display:flex; justify-content:space-between; align-items:center; }
-    .link-btn{
-      text-decoration:none; background:var(--accent); color:#fff;
-      padding:8px 14px; border-radius:8px; font-weight:600; font-size: 14px;
-    }
-    .meta{ font-size:13px; color:#5a6b67; }
-    footer{ margin-top:40px; text-align:center; color:#4b6b63; font-size:14px; padding-bottom: 20px;}
-
-    .card:hover .link-btn {
-  background-color: var(--muted);
-  color: #fff;
-}
-
-.card .link-btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-}
-
-.meta {
-  position: relative;
-  z-index: 2;
-}
-  </style>
+ <meta charset="utf-8" />
+ <title>Робочий зошит — Підприємництво та фінансова грамотність</title>
+ <meta name="viewport" content="width=device-width,initial-scale=1" />
+ <style>
+ :root{--bg:#e8f5f4;--accent:#52ab98;--muted:#2b6777;--card:#fff;}
+ html,body{height:100%;margin:0;}
+ body{font-family:"Inter",Arial,sans-serif;background-color:var(--bg);color:#222;line-height:1.5;padding:28px;box-sizing:border-box;}
+ header,footer{text-align:center;}header{margin-bottom:26px;}header h1{margin:0;font-size:34px;color:var(--muted);}header p{margin:6px 0 0;color:var(--accent);font-size:18px;}
+ .container{max-width:1250px;margin:0 auto;}footer{margin-top:40px;color:#4b6b63;font-size:14px;padding-bottom:20px;}
+ 
+ /* НАВІГАЦІЯ ТА СІТКА */
+ .tabs-nav{display:flex;justify-content:center;gap:12px;margin:24px 0;}
+ .tab-btn{background:var(--card);color:var(--muted);border:2px solid transparent;padding:10px 24px;border-radius:20px;font-weight:700;font-size:16px;cursor:pointer;transition:all .2s;box-shadow:0 2px 6px rgba(0,0,0,0.04);}
+ .tab-btn:hover{border-color:var(--accent);color:var(--accent);}
+ .tab-btn.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+ .grid{display:none;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-top:22px;}
+ .grid.active{display:grid;}
+ 
+ /* КАРТКИ */
+ .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,0.06);display:flex;flex-direction:column;justify-content:space-between;min-height:160px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;}
+ .card:hover{transform:translateY(-6px);box-shadow:0 8px 18px rgba(0,0,0,0.08);}
+ .card-head{display:flex;align-items:center;gap:12px;}
+ .num{width:44px;height:44px;flex-shrink:0;border-radius:10px;background:linear-gradient(180deg,var(--accent),#2f8f7a);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;}
+ .title{font-weight:700;color:var(--muted);font-size:16px;margin:0;}
+ .subtitle-type{font-size:13px;color:#52ab98;font-weight:600;margin-top:4px;}
+ .description{font-size:13px;color:#566;margin-top:12px;flex-grow:1;}
+ .card-footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;}
+ .link-btn{text-decoration:none;background:var(--accent);color:#fff;padding:8px 14px;border-radius:8px;font-weight:600;font-size:14px;position:relative;z-index:2;}
+ .meta{font-size:13px;color:#5a6b67;position:relative;z-index:2;}
+ .card:hover .link-btn{background-color:var(--muted);color:#fff;}
+ .card .link-btn::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;z-index:10;}
+ </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Робочий зошит</h1>
-      <p>Набір робочих аркушів для учнів з предмету <br>"Підприємництво та фінансова грамотність"</p>
-    </header>
+ <div class="container">
+ <header>
+ <h1>Робочий зошит</h1>
+ <p>Набір робочих аркушів для учнів з предмету <br>"Підприємництво та фінансова грамотність"</p>
+ </header>
 
-    <main>
-      <div class="grid" id="sheets-grid">
-        </div>
-    </main>
+ <div class="tabs-nav">
+ <button class="tab-btn active" onclick="switchClass('8', event)">8 Клас</button>
+ <button class="tab-btn" onclick="switchClass('9', event)">9 Клас</button>
+ </div>
 
-    <footer>
-      <p>Завдання складені згідно програми Стеценко І. Б. та Андрусич О. О.</p>
-      <p>Автор завдань: вчитель ЗЗСО Бахмутської міської ради Якубчак А.О.</p>
-    </footer>
-  </div>
+ <main>
+ <div class="grid active" id="sheets-grid-8"></div>
+ <div class="grid" id="sheets-grid-9"></div>
+ </main>
 
-  <script>
-const sheets = [
-  { 
-    title: "Підприємці та підприємливість", 
-    type: "Тести, заповнення пропусків, роздуми", 
-    desc: "Досліджуємо сутність підприємницької діяльності, ключові риси особистості підприємця та його роль у створенні суспільної користі.", 
-    time: "25" 
-  },
-  { 
-    title: "Практикум підприємливих новачків", 
-    type: "Тести, множинний вибір, послідовність", 
-    desc: "Аналізуємо значення фінансової грамотності, вчимося ставити чіткі фінансові цілі та розрізняти кроки до їх успішної реалізації.", 
-    time: "20" 
-  },
-  { 
-    title: "Гроші в житті людини — вчора та сьогодні", 
-    type: "Тести, так/ні, заповнення таблиці", 
-    desc: "Вивчаємо еволюцію грошей від монет Володимира Великого до сучасних форм, аналізуючи основні функції грошей у суспільстві.", 
-    time: "15" 
-  },
-  { 
-    title: "Як ми розпоряджаємося грошима", 
-    type: "Тести, послідовність, розгорнута відповідь", 
-    desc: "Розглядаємо моделі прийняття обґрунтованих фінансових рішень, балансуючи між власними потребами, бажаннями та можливостями економії.", 
-    time: "15" 
-  },
-  { 
-    title: "Фінансова поведінка та ризики", 
-    type: "Тести, аналіз ситуацій, оцінка ризиків", 
-    desc: "Оцінюємо взаємозв'язок між фінансовими рішеннями та ризиками, вчимося розпізнавати сумнівні пропозиції та захищати власні кошти.", 
-    time: "20" 
-  },
-  { 
-    title: "Я — раціональний споживач", 
-    type: "Тести, коротка відповідь, розподіл на групи", 
-    desc: "Формуємо навички свідомого споживання: вчимося критично аналізувати рекламу та обирати товари на основі якості й доцільності.", 
-    time: "15" 
-  },
-  { 
-    title: "Держава допомагає мені, я забезпечую державу", 
-    type: "Тести, робота з таблицями, кейс-ситуація", 
-    desc: "З'ясовуємо роль податків у створенні суспільних благ та вивчаємо механізми взаємодії громадянина з державою задля спільного розвитку.", 
-    time: "20" 
-  },
-  { 
-    title: "Діагностична робота (І семестр)", 
-    type: "Комплексні тестові та творчі завдання", 
-    desc: "Систематизуємо та перевіряємо знання про фінансову поведінку, раціональне споживання та економічну роль особистості в суспільстві.", 
-    time: "45" 
-  },
-  { 
-    title: "Ресурси й наші потреби", 
-    type: "Тести, класифікація, ситуаційні задачі", 
-    desc: "Вивчаємо проблему обмеженості природних, людських та фінансових ресурсів у контексті постійного зростання людських потреб.", 
-    time: "20" 
-  },
-  { 
-    title: "Потреби й наш вибір", 
-    type: "Тести, ієрархія (Маслоу), кейс-стаді", 
-    desc: "Досліджуємо піраміду потреб та вчимося приймати раціональні рішення в умовах необхідності вибору між альтернативними варіантами.", 
-    time: "20" 
-  },
-  { 
-    title: "Плануємо доходи й витрати", 
-    type: "Тести, аналіз бюджету, розрахунки", 
-    desc: "Опановуємо інструменти контролю грошових потоків, розрізняємо активні й пасивні доходи та визначаємо типи сімейного бюджету.", 
-    time: "20" 
-  },
-  { 
-    title: "Кишенькові гроші — свобода чи відповідальність?", 
-    type: "Тести, фінансове планування, аналіз поведінки", 
-    desc: "Дискутуємо про культуру користування особистими коштами та вчимося відповідально планувати витрати для досягнення власних цілей.", 
-    time: "20" 
-  },
-  { 
-    title: "Заощадження та депозит", 
-    type: "Так/ні, послідовність, розрахунки", 
-    desc: "Досліджуємо банківські інструменти збереження коштів та вчимося обчислювати дохідність депозитів як способу примноження капіталу.", 
-    time: "20" 
-  },
-  { 
-    title: "Заощаджувати чи позичати? (Частина 1)", 
-    type: "Так/ні, заповнення пропусків, ситуація", 
-    desc: "Порівнюємо стратегії накопичення та залучення позикових коштів, аналізуючи переваги та ризики кредитування та розстрочки.", 
-    time: "20" 
-  },
-  { 
-    title: "Накопичувати чи позичати? (Частина 2)", 
-    type: "Тести, обчислення відсотків, кейс", 
-    desc: "Поглиблюємо розуміння процентних ставок та вчимося обчислювати загальну вартість кредиту й відповідально ставитися до зобов'язань.", 
-    time: "20" 
-  },
-  { 
-    title: "Гроші працюють: інвестиції", 
-    type: "Так/ні, відповідність, аналіз стартапів", 
-    desc: "Знайомимося з основами інвестування в бізнес та фінансові інструменти, вивчаючи зв’язок між рівнем ризику та очікуваним прибутком.", 
-    time: "20" 
-  },
-  { 
-    title: "Фінансова безпека та шахрайство", 
-    type: "Так/ні, відповідність, кейс", 
-    desc: "Порівнюємо ризиковані й безпечні фінансові дії, досліджуючи механізми захисту від шахрайства та правила відповідального користування фінансовими інструментами.", 
-    time: "20" 
-  },
-  { 
-    title: "Підсумковий робочий аркуш",
-    type: "Тести, так/ні, групування, таблиця, пропуски, кейс",
-    desc: "Узагальнюємо знання про доходи, витрати, кредити, депозити, інвестування та фінансову безпеку, аналізуючи відповідальні фінансові рішення й способи захисту від шахрайства.",
-    time: "20"
-  }
-];
+ <footer>
+ <p>Завдання складені згідно програми Стеценко І. Б. та Андрусич О. О.</p>
+ <p>Автор завдань: вчитель ЗЗСО Бахмутської міської ради Якубчак А.О.</p>
+ </footer>
+ </div>
 
-    const grid = document.getElementById('sheets-grid');
+ <script>
+const courseData = {
+ "8": [
+ { 
+ title: "Підприємці та підприємливість", 
+ type: "Тести, заповнення пропусків, роздуми", 
+ desc: "Досліджуємо сутність підприємницької діяльності, ключові риси особистості підприємця та його роль у створенні суспільної користі.", 
+ time: "25" 
+ },
+ { 
+ title: "Практикум підприємливих новачків",
+ type: "Тести, множинний вибір, послідовність", 
+ desc: "Аналізуємо значення фінансової грамотності, вчимося ставити чіткі фінансові цілі та розрізняти кроки до їх успішної реалізації.", 
+ time: "20" 
+ },
+ { 
+ title: "Гроші в житті людини — вчора та сьогодні", 
+ type: "Тести, так/ні, заповнення таблиці", 
+ desc: "Вивчаємо еволюцію грошей від монет Володимира Великого до сучасних форм, аналізуючи основні функції грошей у суспільстві.", 
+ time: "15" 
+ },
+ { 
+ title: "Як ми розпоряджаємося грошима", 
+ type: "Тести, послідовність, розгорнута відповідь", 
+ desc: "Розглядаємо моделі прийняття обґрунтованих фінансових рішень, балансуючи між власними потребами, бажаннями та можливостями економії.", 
+ time: "15" 
+ },
+ { 
+ title: "Фінансова поведінка та ризики", 
+ type: "Тести, аналіз ситуацій, оцінка ризиків", 
+ desc: "Оцінюємо взаємозв'язок між фінансовими рішеннями та ризиками, вчимося розпізнавати сумнівні пропозиції та захищати власні кошти.", 
+ time: "20" 
+ },
+ { 
+ title: "Я — раціональний споживач", 
+ type: "Тести, коротка відповідь, розподіл на групи", 
+ desc: "Формуємо навички свідомого споживання: вчимося критично аналізувати рекламу та обирати товари на основі якості й доцільності.", 
+ time: "15" 
+ },
+ { 
+ title: "Держава допомагає мені, я забезпечую державу", 
+ type: "Тести, робота з таблицями, кейс-ситуація", 
+ desc: "З'ясовуємо роль податків у створенні суспільних благ та вивчаємо механізми взаємодії громадянина з державою задля спільного розвитку.", 
+ time: "20" 
+ },
+ { 
+ title: "Діагностична робота (І семестр)", 
+ type: "Комплексні тестові та творчі завдання", 
+ desc: "Систематизуємо та перевіряємо знання про фінансову поведінку, раціональне споживання та економічну роль особистості в суспільстві.", 
+ time: "45" 
+ },
+ { 
+ title: "Ресурси й наші потреби", 
+ type: "Тести, класифікація, ситуаційні задачі", 
+ desc: "Вивчаємо проблему обмеженості природних, людських та фінансових ресурсів у контексті постійного зростання людських потреб.", 
+ time: "20" 
+ },
+ { 
+ title: "Потреби й наш вибір", 
+ type: "Тести, ієрархія (Маслоу), кейс-стаді", 
+ desc: "Досліджуємо піраміду потреб та вчимося приймати раціональні рішення в умовах необхідності вибору між альтернативними варіантами.", 
+ time: "20" 
+ },
+ { 
+ title: "Плануємо доходи й витрати", 
+ type: "Тести, аналіз бюджету, розрахунки",
+ desc: "Опановуємо інструменти контролю грошових потоків, розрізняємо активні й пасивні доходи та визначаємо типи сімейного бюджету.", 
+ time: "20" 
+ },
+ { 
+ title: "Кишенькові гроші — свобода чи відповідальність?", 
+ type: "Тести, фінансове планування, аналіз поведінки", 
+ desc: "Дискутуємо про культуру користування особистими коштами та вчимося відповідально планувати витрати для досягнення власних цілей.", 
+ time: "20" 
+ },
+ { 
+ title: "Заощадження та депозит", 
+ type: "Так/ні, послідовність, розрахунки", 
+ desc: "Досліджуємо банківські інструменти збереження коштів та вчимося обчислювати дохідність депозитів як способу примноження капіталу.", 
+ time: "20" 
+ },
+ { 
+ title: "Заощаджувати чи позичати? (Частина 1)", 
+ type: "Так/ні, заповнення пропусків, ситуація", 
+ desc: "Порівнюємо стратегії накопичення та залучення позикових коштів, аналізуючи переваги та ризики кредитування та розрозстрочки.", 
+ time: "20" 
+ },
+ { 
+ title: "Накопичувати чи позичати? (Частина 2)", 
+ type: "Тести, обчислення відсотків, кейс", 
+ desc: "Поглиблюємо розуміння процентних ставок та вчимося обчислювати загальну вартість кредиту й відповідально ставитися до зобов'язань.", 
+ time: "20" 
+ },
+ { 
+ title: "Гроші працюють: інвестиції", 
+ type: "Так/ні, відповідність, аналіз стартапів", 
+ desc: "Знайомимося з основами інвестування в бізнес та фінансові інструменти, вивчаючи зв’язок між рівнем ризику та очікуваним прибутком.", 
+ time: "20" 
+ },
+ { 
+ title: "Финансова безпека та шахрайство", 
+ type: "Так/ні, відповідність, кейс", 
+ desc: "Порівнюємо ризиковані й безпечні фінансові дії, досліджуючи механізми захисту від шахрайства та правила відповідального користування фінансовими інструментами.", 
+ time: "20" 
+ },
+ { 
+ title: "Підсумковий робочий аркуш",
+ type: "Тести, так/ні, групування, таблиця, пропуски, кейс",
+ desc: "Узагальнюємо знання про доходи, витрати, кредити, депозити, інвестування та фінансову безпеку, аналізуючи відповідальні фінансові рішення й способи захисту від шахрайства.",
+ time: "20"
+ }
+ ],
+ "9": [
+ /* СЮДИ СЛІД ВСТАВИТИ СПИСОК ДЛЯ 9 КЛАСУ АНАЛОГІЧНО ДО 8-ГО */
+ { 
+ title: "Тема-приклад для 9 класу", 
+ type: "Тести, кейси", 
+ desc: "Опис майбутнього завдання або теми для дев'ятикласників.", 
+ time: "20" 
+ }
+ ]
+};
 
-    sheets.forEach((sheet, index) => {
-      const num = index + 1;
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        <div>
-          <div class="card-head">
-            <div class="num">${num}</div>
-            <div>
-              <div class="title">Аркуш ${num} — ${sheet.title}</div>
-              <div class="subtitle-type">${sheet.type}</div>
-            </div>
-          </div>
-          <div class="description">${sheet.desc}</div>
-        </div>
-        <div class="card-footer">
-          <span class="meta">≈ ${sheet.time} хв</span>
-          <a class="link-btn" href="sheet${num}.html">Відкрити</a>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-  </script>
+function renderGrid(cl) {
+ const g = document.getElementById(`sheets-grid-${cl}`);g.innerHTML = "";
+ courseData[cl].forEach((s, i) => {
+ const card = document.createElement('div');card.className = 'card';
+ card.innerHTML = `<div><div class="card-head"><div class="num">${i+1}</div><div><div class="title">Аркуш ${i+1} — ${s.title}</div><div class="subtitle-type">${s.type}</div></div></div><div class="description">${s.desc}</div></div><div class="card-footer"><span class="meta">≈ ${s.time} хв</span><a class="link-btn" href="class${cl}_sheet${i+1}.html">Відкрити</a></div>`;
+ g.appendChild(card);
+ });
+}
+function switchClass(cl, e) {
+ document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));e.target.classList.add('active');
+ document.querySelectorAll('.grid').forEach(g => g.classList.remove('active'));document.getElementById(`sheets-grid-${cl}`).classList.add('active');
+}
+renderGrid("8");renderGrid("9");
+ </script>
 </body>
 </html>
