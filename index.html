@@ -92,12 +92,10 @@ function renderGrid(cl) {
  const g = document.getElementById(`sheets-grid-${cl}`); g.innerHTML = "";
  courseData[cl].forEach((s, i) => {
   const card = document.createElement('div'); card.className = 'card';
+  const num = i + 1;
+    const fileHref = cl === "8" ? `sheet${num}.html` : `sheet9_${num}.html`;
   
-  const numPad = String(i + 1).padStart(2, '0');
-  
-  const fileHref = cl === "8" ? `sheet${numPad}.html` : `sheet9_${numPad}.html`;
-  
-  card.innerHTML = `<div><div class="card-head"><div class="num">${i+1}</div><div><div class="title">Аркуш ${i+1} — ${s.title}</div><div class="subtitle-type">${s.type}</div></div></div><div class="description">${s.desc}</div></div><div class="card-footer"><span class="meta">≈ ${s.time} хв</span><a class="link-btn" href="${fileHref}">Відкрити</a></div>`;
+  card.innerHTML = `<div><div class="card-head"><div class="num">${num}</div><div><div class="title">Аркуш ${num} — ${s.title}</div><div class="subtitle-type">${s.type}</div></div></div><div class="description">${s.desc}</div></div><div class="card-footer"><span class="meta">≈ ${s.time} хв</span><a class="link-btn" href="${fileHref}">Відкрити</a></div>`;
   g.appendChild(card);
  });
 }
