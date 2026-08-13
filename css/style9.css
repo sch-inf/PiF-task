@@ -1,0 +1,58 @@
+body {
+  font-family: "Inter", Arial, sans-serif; background-color: #f0f4f8;
+  margin: 0 auto; padding: 20px; color: #333; line-height: 1.8;
+  font-size: 18px; max-width: 1250px;
+}
+
+header { text-align: center; margin-bottom: 30px; }
+header h1 { font-size: 34px; margin: 0; color: #1c3d5a; }
+header a { color: inherit; text-decoration: none; transition: color 0.3s ease; }  
+header a:hover { color: indianred; }  
+header h2 { font-size: 24px; font-weight: normal; color: #3b71ca; margin-top: 5px; }
+.task { 
+  background: #fff; border-radius: 16px; padding: 24px; margin: 25px 0; 
+  box-shadow: 0 4px 18px rgba(0,0,0,0.04); page-break-inside: avoid;
+  border: 1px solid rgba(0,0,0,0.02); transition: transform 0.25s, box-shadow 0.25s;
+}
+.task:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(0,0,0,0.06); }
+.info { background: #eef3ff; font-size: 16px; border: 1px dashed #3b71ca; }
+.question { background-color: #f0f4f8; border-radius: 12px; padding: 20px; margin: 15px 0; position: relative; }
+.question p { font-weight: 600; margin-inline: 2rem; display: inline; }
+.question p + p { display: block !important; margin: 0 2rem; }
+.task-number { display: inline-block; background: #3b71ca; color: #fff; font-weight: bold; border-radius: 50%; width: 32px; height: 32px; line-height: 32px; text-align: center; margin-right: 10px; font-size: 18px; }
+.task-desc { display: inline-block; font-weight: 600; color: #1c3d5a; font-size: 22px; }
+.sub-number { font-weight: bold; margin-right: 6px; color: #1c3d5a; position: absolute; left: 10px; }
+.options { margin-top: 10px; padding-left: 25px; list-style-type: none; }
+.options li { margin: 10px 0; cursor: pointer; padding: 6px 12px; border-radius: 8px; transition: all 0.2s; border: 1px solid transparent; }
+.options li:hover { background-color: rgba(0,0,0,0.02); border-color: rgba(0,0,0,0.05); }
+.options li.selected { background-color: #d1e2ff; font-weight: 600; }
+
+.answer { border: 2px dashed #3b71ca; background-color: #f8faff; border-radius: 8px; padding: 8px 12px; min-height: 30px; outline: none; cursor: text; position: relative; margin-top: 10px; transition: all 0.3s; }
+.answer:focus { border-style: solid; box-shadow: 0 0 0 3px rgba(59,113,202,0.15); }
+.answer.long { min-height: 100px; }
+.answer:empty:before { content: attr(data-placeholder); color: #aaa; position: absolute; left: 12px; top: 8px; pointer-events: none; }
+.task[data-type="gap"] .answer { display: inline-block; min-width: 120px; font-weight: 400; }
+
+.match { display: flex; gap: 40px; margin-top: 10px; }
+.match-col { flex: 1; padding: 15px; border-radius: 8px; display: flex; flex-direction: column; }
+.match-col:nth-child(1) { background-color: #eaf4ff; }
+.match-col:nth-child(2) { background-color: #fff5e6; }
+
+th, td { padding: 10px; border-color: rgba(0,0,0,0.08) !important; }
+.true-false { display: grid; grid-template-columns: auto 60px 60px; margin: 8px 0; cursor: pointer; position: relative; }
+.true-false span.option { margin-left: 15px; font-size: 22px; color: #1c3d5a; font-weight: bold; position: relative; top: -4px; cursor: pointer; padding: 2px 6px; border-radius: 6px; transition: all 0.2s; }
+.true-false span.option:hover { background: rgba(0,0,0,0.04); }
+.true-false span.option.selected { background: #d1e2ff; }
+
+#submit-btn { 
+  display: block; margin: 40px auto; padding: 14px 36px; font-size: 20px; font-weight: 700;
+  background-color: #3b71ca; color: #fff; border: none; border-radius: 12px; 
+  cursor: pointer; transition: all 0.25s; box-shadow: 0 4px 12px rgba(59,113,202,0.15);
+}
+#submit-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(59,113,202,0.25); opacity: 0.95; }
+
+#summary { display: none; background: #fff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); padding: 30px; margin-top: 40px; border: 1px solid rgba(0,0,0,0.02); }
+#summary h2 { text-align: center; color: #1c3d5a; }
+#summary-columns { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+#summary-columns ul { list-style: none; padding: 15px; margin: 0; background: #f0f4f8; border-radius: 12px; }
+#summary-columns li { margin-bottom: 8px; }
