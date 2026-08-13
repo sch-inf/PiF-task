@@ -14,7 +14,7 @@ header h2 { font-size: 24px; font-weight: normal; color: #3b71ca; margin-top: 5p
   box-shadow: 0 4px 18px rgba(0,0,0,0.04); page-break-inside: avoid;
   border: 1px solid rgba(0,0,0,0.02); transition: transform 0.25s, box-shadow 0.25s;
 }
-.task:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(0,0,0,0.06); }
+.task:hover {box-shadow: 0 6px 22px rgba(0,0,0,0.06); }
 .info { background: #eef3ff; font-size: 16px; border: 1px dashed #3b71ca; }
 .question { background-color: #f0f4f8; border-radius: 12px; padding: 20px; margin: 15px 0; position: relative; }
 .question p { font-weight: 600; margin-inline: 2rem; display: inline; }
