@@ -117,7 +117,13 @@ function switchClass(cl, e) {
 }
 
 renderGrid("8"); renderGrid("9");
+function initFromHash() {
+ const hash = window.location.hash;
+ if (hash === "#class9") { switchClass("9", true); } 
+ else { switchClass("8", true); }
+}
 
+initFromHash();
   </script>
 </body>
 </html>
