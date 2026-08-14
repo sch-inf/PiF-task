@@ -112,7 +112,7 @@ function renderGrid(cl) {
   const num = i + 1;
     const fileHref = cl === "8" ? `sheet${num}.html` : `sheet9_${num}.html`;
   
-  card.innerHTML = `<div><div class="card-head"><div class="num">${num}</div><div><div class="title">Аркуш ${num} — ${s.title}</div><div class="subtitle-type">${s.type}</div></div></div><div class="description">${s.desc}</div></div><div class="card-footer"><span class="meta">≈ ${s.time} хв</span><a class="link-btn" href="${fileHref}">Відкрити</a></div>`;
+  card.innerHTML = `<div><div class="card-head"><div class="num">${num}</div><div><div class="title">${s.title}</div><div class="subtitle-type">${s.type}</div></div></div><div class="description">${s.desc}</div></div><div class="card-footer"><span class="meta">≈ ${s.time} хв</span><a class="link-btn" href="${fileHref}">Відкрити</a></div>`;
   g.appendChild(card);
  });
 }
